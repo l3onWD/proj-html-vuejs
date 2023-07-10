@@ -3,11 +3,13 @@
 * RESOURCES
 -------------------------------------------*/
 /*** COMPONENTS ***/
-import HeaderMenu from '@/components/HeaderMenu.vue';
+import HeaderMenu from '@/components/header/HeaderMenu.vue';
+import HeaderActions from '@/components/header/HeaderActions.vue';
+import HeaderLogo from '@/components/header/HeaderLogo.vue';
 
 
 export default {
-    components: { HeaderMenu }
+    components: { HeaderMenu, HeaderActions, HeaderLogo }
 
 }
 </script>
@@ -24,6 +26,7 @@ export default {
                     <!-- Left Panel -->
                     <li>
                         <ul class="d-flex">
+
                             <li><a class="p-2" href="#">Link</a></li>
 
                             <li>
@@ -54,9 +57,7 @@ export default {
                 <ul class="row align-items-center">
                     <!-- Logo -->
                     <li class="col-auto">
-                        <a href="#">
-                            <img src="@/assets/img/logo.png" alt="Logo">
-                        </a>
+                        <HeaderLogo />
                     </li>
 
                     <!-- Menu -->
@@ -66,11 +67,7 @@ export default {
 
                     <!-- Actions -->
                     <li class="col-auto">
-                        <ul class="d-flex">
-                            <li><button>icon</button></li>
-                            <li><button>icon</button></li>
-                            <li><button>icon</button></li>
-                        </ul>
+                        <HeaderActions />
                     </li>
                 </ul>
 

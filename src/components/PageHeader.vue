@@ -20,23 +20,28 @@ export default {
 
         <nav>
             <!-- Header Top -->
-            <div>
+            <div class="header-top">
                 <ul class="container d-flex justify-content-between align-items-center py-2">
 
                     <!-- Left Panel -->
                     <li>
                         <ul class="d-flex">
 
-                            <li><a class="p-2" href="#">Link</a></li>
+                            <li><a href="#" class="vertical-separator ps-0">Wishlist(0)</a></li>
 
                             <li>
-                                <button>Dropdown</button>
+
+                                <button>Need Help?
+                                    <FontAwesomeIcon icon="fas fa-angle-down" />
+                                </button>
+
                                 <ul class="d-none">
                                     <li><a href="#">123456748</a></li>
                                     <li><a href="#">123456748</a></li>
                                     <li><a href="#">123456748</a></li>
                                     <li><a href="#">123456748</a></li>
                                 </ul>
+
                             </li>
                         </ul>
 
@@ -44,7 +49,7 @@ export default {
 
                     <!-- Right Panel -->
                     <li>
-                        <a href="#">123456748</a>
+                        <a href="#" class="pe-0">123456748</a>
                     </li>
 
                 </ul>
@@ -52,7 +57,7 @@ export default {
 
 
             <!-- Header Bottom -->
-            <div class="container">
+            <div class="container header-bottom">
 
                 <ul class="row align-items-center">
                     <!-- Logo -->
@@ -87,7 +92,17 @@ header {
     background-color: $col-dark;
 }
 
-nav>div:first-child {
-    border-bottom: 1px solid $col-gray;
+.header-top {
+    color: $col-gray;
+    border-bottom: 1px solid $col-darkgray;
+
+    & a {
+        display: inline-block;
+    }
+
+    & a,
+    & button {
+        padding: 0.5rem 1.5rem;
+    }
 }
 </style>

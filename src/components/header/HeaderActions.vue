@@ -33,9 +33,12 @@ export default {
 </template>
 
 
-<style scoped>
+<style lang="scss" scoped>
 button {
-    padding: 0.5rem;
-    color: #fff;
+    padding: 0.75rem;
+
+    & svg {
+        font-size: 1.3rem;
+    }
 }
 </style>

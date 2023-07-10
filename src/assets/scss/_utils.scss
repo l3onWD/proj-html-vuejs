@@ -1,7 +1,10 @@
 /* -----------------------------------------
-* VARIABLES
+* UTILS
 -------------------------------------------*/
+@use './vars' as *;
+
+
 /*** COLORS ***/
-$col-dark: #1d1427;
-$col-gray: #777;
-$col-yellow: #f9aa01;
+.text-yellow {
+    color: $col-yellow;
+}

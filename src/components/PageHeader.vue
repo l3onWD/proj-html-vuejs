@@ -6,10 +6,20 @@
 import HeaderMenu from '@/components/header/HeaderMenu.vue';
 import HeaderActions from '@/components/header/HeaderActions.vue';
 import HeaderLogo from '@/components/header/HeaderLogo.vue';
+import BaseDropmenu from '@/components/base/BaseDropmenu.vue';
+
+/*** DATA ***/
+import { contactLinks } from '@/data/';
 
 
 export default {
-    components: { HeaderMenu, HeaderActions, HeaderLogo }
+    components: { HeaderMenu, HeaderActions, HeaderLogo, BaseDropmenu },
+
+    data() {
+        return {
+            contactLinks: contactLinks
+        };
+    }
 
 }
 </script>
@@ -31,16 +41,8 @@ export default {
 
                             <li>
 
-                                <button>Need Help?
-                                    <FontAwesomeIcon icon="fas fa-angle-down" />
-                                </button>
+                                <BaseDropmenu text="Need Help?" :links="contactLinks" />
 
-                                <ul class="d-none">
-                                    <li><a href="#">123456748</a></li>
-                                    <li><a href="#">123456748</a></li>
-                                    <li><a href="#">123456748</a></li>
-                                    <li><a href="#">123456748</a></li>
-                                </ul>
 
                             </li>
                         </ul>

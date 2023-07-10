@@ -1,6 +1,17 @@
 <script>
+/* -----------------------------------------
+* RESOURCES
+-------------------------------------------*/
+/*** DATA ***/
+import { headerMenuLinks } from '@/data/';
+
 export default {
 
+    data() {
+        return {
+            links: headerMenuLinks
+        };
+    }
 
 }
 </script>
@@ -8,12 +19,9 @@ export default {
 
 <template>
     <ul class="d-flex justify-content-center">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Media</a></li>
-        <li><a href="#">ShortCode</a></li>
-        <li><a href="#">Features</a></li>
+        <li v-for="link in links" :key="link.text"><a :href="link.url" :class="{ active: link.isActive }">{{ link.text
+        }}</a>
+        </li>
     </ul>
 </template>
 

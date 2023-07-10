@@ -11,12 +11,12 @@ export default {
 
         <nav class="container">
             <!-- Header Top -->
-            <ul class="d-flex justify-content-between">
+            <ul class="d-flex justify-content-between align-items-center py-2">
 
                 <!-- Left Panel -->
                 <li>
                     <ul class="d-flex">
-                        <li><a href="#">Link</a></li>
+                        <li><a class="p-2" href="#">Link</a></li>
 
                         <li>
                             <button>Dropdown</button>
@@ -40,17 +40,17 @@ export default {
 
 
             <!-- Header Bottom -->
-            <ul class="d-flex">
+            <ul class="row align-items-center">
                 <!-- Logo -->
-                <li>
+                <li class="col-auto">
                     <a href="#">
                         <img src="@/assets/img/logo.png" alt="Logo">
                     </a>
                 </li>
 
                 <!-- Menu -->
-                <li>
-                    <ul class="d-flex">
+                <li class="col">
+                    <ul class="d-flex justify-content-center">
                         <li><a href="#">Link 01</a></li>
                         <li><a href="#">Link 02</a></li>
                         <li><a href="#">Link 03</a></li>
@@ -61,7 +61,7 @@ export default {
                 </li>
 
                 <!-- Actions -->
-                <li>
+                <li class="col-auto">
                     <ul class="d-flex">
                         <li><button>icon</button></li>
                         <li><button>icon</button></li>
@@ -75,4 +75,4 @@ export default {
 </template>
 
 
-<style></style>
+<style scoped></style>

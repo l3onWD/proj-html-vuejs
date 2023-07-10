@@ -8,19 +8,29 @@ export default {
 
 <template>
     <ul class="d-flex justify-content-center">
-        <li><a href="#">Link 01</a></li>
-        <li><a href="#">Link 02</a></li>
-        <li><a href="#">Link 03</a></li>
-        <li><a href="#">Link 04</a></li>
-        <li><a href="#">Link 05</a></li>
-        <li><a href="#">Link 06</a></li>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Media</a></li>
+        <li><a href="#">ShortCode</a></li>
+        <li><a href="#">Features</a></li>
     </ul>
 </template>
 
 
-<style scoped>
+<style lang="scss" scoped>
+@use '@/assets/scss/vars' as *;
+
+
 a {
-    padding: 1rem;
+    padding: 2rem 1.5rem;
+
     display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    &.active {
+        color: $col-yellow;
+    }
 }
 </style>

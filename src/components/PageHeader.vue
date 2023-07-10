@@ -1,6 +1,13 @@
 <script>
-export default {
+/* -----------------------------------------
+* RESOURCES
+-------------------------------------------*/
+/*** COMPONENTS ***/
+import HeaderMenu from '@/components/HeaderMenu.vue';
 
+
+export default {
+    components: { HeaderMenu }
 
 }
 </script>
@@ -9,70 +16,81 @@ export default {
 <template>
     <header>
 
-        <nav class="container">
+        <nav>
             <!-- Header Top -->
-            <ul class="d-flex justify-content-between align-items-center py-2">
+            <div>
+                <ul class="container d-flex justify-content-between align-items-center py-2">
 
-                <!-- Left Panel -->
-                <li>
-                    <ul class="d-flex">
-                        <li><a class="p-2" href="#">Link</a></li>
+                    <!-- Left Panel -->
+                    <li>
+                        <ul class="d-flex">
+                            <li><a class="p-2" href="#">Link</a></li>
 
-                        <li>
-                            <button>Dropdown</button>
-                            <ul class="d-none">
-                                <li><a href="#">123456748</a></li>
-                                <li><a href="#">123456748</a></li>
-                                <li><a href="#">123456748</a></li>
-                                <li><a href="#">123456748</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                            <li>
+                                <button>Dropdown</button>
+                                <ul class="d-none">
+                                    <li><a href="#">123456748</a></li>
+                                    <li><a href="#">123456748</a></li>
+                                    <li><a href="#">123456748</a></li>
+                                    <li><a href="#">123456748</a></li>
+                                </ul>
+                            </li>
+                        </ul>
 
-                </li>
+                    </li>
 
-                <!-- Right Panel -->
-                <li>
-                    <a href="#">123456748</a>
-                </li>
+                    <!-- Right Panel -->
+                    <li>
+                        <a href="#">123456748</a>
+                    </li>
 
-            </ul>
+                </ul>
+            </div>
 
 
             <!-- Header Bottom -->
-            <ul class="row align-items-center">
-                <!-- Logo -->
-                <li class="col-auto">
-                    <a href="#">
-                        <img src="@/assets/img/logo.png" alt="Logo">
-                    </a>
-                </li>
+            <div class="container">
 
-                <!-- Menu -->
-                <li class="col">
-                    <ul class="d-flex justify-content-center">
-                        <li><a href="#">Link 01</a></li>
-                        <li><a href="#">Link 02</a></li>
-                        <li><a href="#">Link 03</a></li>
-                        <li><a href="#">Link 04</a></li>
-                        <li><a href="#">Link 05</a></li>
-                        <li><a href="#">Link 06</a></li>
-                    </ul>
-                </li>
+                <ul class="row align-items-center">
+                    <!-- Logo -->
+                    <li class="col-auto">
+                        <a href="#">
+                            <img src="@/assets/img/logo.png" alt="Logo">
+                        </a>
+                    </li>
 
-                <!-- Actions -->
-                <li class="col-auto">
-                    <ul class="d-flex">
-                        <li><button>icon</button></li>
-                        <li><button>icon</button></li>
-                        <li><button>icon</button></li>
-                    </ul>
-                </li>
-            </ul>
+                    <!-- Menu -->
+                    <li class="col">
+                        <HeaderMenu />
+                    </li>
+
+                    <!-- Actions -->
+                    <li class="col-auto">
+                        <ul class="d-flex">
+                            <li><button>icon</button></li>
+                            <li><button>icon</button></li>
+                            <li><button>icon</button></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
         </nav>
 
     </header>
 </template>
 
 
-<style scoped></style>
+<style lang="scss" scoped>
+@use '@/assets/scss/vars' as *;
+
+
+header {
+    background-color: $col-dark;
+}
+
+nav>div:first-child {
+    border-bottom: 1px solid $col-gray;
+}
+</style>

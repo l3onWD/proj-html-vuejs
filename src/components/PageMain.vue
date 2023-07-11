@@ -121,17 +121,8 @@ export default {
             </ul>
 
             <div class="row row-cols-4">
-                <div class="col">
-                    <ProductCard />
-                </div>
-                <div class="col">
-                    <ProductCard />
-                </div>
-                <div class="col">
-                    <ProductCard />
-                </div>
-                <div class="col">
-                    <ProductCard />
+                <div v-for="product in store.productDeals" :key="product.id" class="col">
+                    <ProductCard v-bind="product" />
                 </div>
             </div>
         </section>

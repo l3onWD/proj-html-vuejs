@@ -1,13 +1,14 @@
 <script>
 /*** COMPONENTS ***/
 import ProductCard from '@/components/products/ProductCard.vue';
+import BlogCard from '@/components/blog/BlogCard.vue';
 
 /*** DATA ***/
 import { store } from '@/data/store';
 
 
 export default {
-    components: { ProductCard },
+    components: { ProductCard, BlogCard },
     data() {
         return {
             store
@@ -138,13 +139,13 @@ export default {
         <section class="bg-danger container py-5">
             <div class="row row-cols-3">
                 <div class="col">
-                    Blog Card
+                    <BlogCard />
                 </div>
                 <div class="col">
-                    Blog Card
+                    <BlogCard />
                 </div>
                 <div class="col">
-                    Blog Card
+                    <BlogCard />
                 </div>
             </div>
         </section>

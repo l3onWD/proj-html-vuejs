@@ -18,6 +18,10 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
+h3 {
+    font-size: 2rem;
+}
+
 a {
     color: inherit;
     text-decoration: none;
@@ -50,4 +54,25 @@ button {
 
 address {
     margin-bottom: 0;
+}
+
+section {
+
+    header h3 {
+        position: relative;
+
+        &::after {
+            content: '';
+            margin: 0 auto;
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            width: 50px;
+
+            border: 1px solid $col-yellow;
+        }
+    }
+
+
 }

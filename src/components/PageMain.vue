@@ -100,7 +100,9 @@ export default {
         <!-- Categories -->
         <section class="container py-5">
 
-            <h3 class="text-center mb-5">Special Category</h3>
+            <header>
+                <h3 class="text-center mb-5">Special Category</h3>
+            </header>
 
             <div class="row row-cols-3">
                 <div class="col">
@@ -155,6 +157,10 @@ export default {
 
         <!-- Blogs -->
         <section class="bg-danger container py-5">
+            <header>
+                <h3 class="text-center mb-5">New Game Blogs</h3>
+            </header>
+
             <div class="row row-cols-3">
                 <div v-for="blog in store.blogs" :key="blog.id" class="col">
                     <BlogCard v-bind="blog" />

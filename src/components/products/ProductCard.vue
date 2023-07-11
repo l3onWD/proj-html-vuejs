@@ -54,7 +54,7 @@ export default {
 
 
 <template>
-    <div @mouseover="isSelected = true" @mouseleave="isSelected = false" class="product-card p-2">
+    <div @mouseover="isSelected = true" @mouseleave="isSelected = false" class="product-card m-2">
 
         <!-- Image -->
         <div class="product-image">
@@ -86,17 +86,22 @@ export default {
 @use '@/assets/scss/vars' as *;
 
 
-.product-image {
-    position: relative;
+.product-card {
 
-    .product-discount {
-        position: absolute;
-        top: 10px;
-        left: 10px;
+    box-shadow: 0 0 8px 2px rgba($color: #000, $alpha: 0.1);
+
+    .product-image {
+        position: relative;
+
+        .product-discount {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
     }
-}
 
-.product-info {
-    background-color: $col-dark;
+    .product-info {
+        background-color: $col-dark;
+    }
 }
 </style>

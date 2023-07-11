@@ -5,6 +5,8 @@
 /*** COMPONENTS ***/
 import ProductSection from '@/components/products/ProductSection.vue';
 import ProductDealsSection from '@/components/products/ProductDealsSection.vue';
+import HeroSection from '@/components/promotions/HeroSection.vue';
+import HeroCard from '@/components/promotions/HeroCard.vue';
 import BlogCard from '@/components/blog/BlogCard.vue';
 
 /*** DATA ***/
@@ -12,7 +14,7 @@ import { store } from '@/data/store';
 
 
 export default {
-    components: { BlogCard, ProductSection, ProductDealsSection },
+    components: { BlogCard, ProductSection, ProductDealsSection, HeroCard, HeroSection },
 
     data() {
         return {
@@ -31,9 +33,7 @@ export default {
     <main>
 
         <!-- Jumbotron -->
-        <section class="bg-danger vh-100 d-flex">
-            <h2 class="m-auto">jumbotron</h2>
-        </section>
+        <HeroSection />
 
 
         <!-- Services -->
@@ -61,10 +61,20 @@ export default {
         <section class="bg-danger container py-5">
             <div class="row row-cols-2">
                 <div class="col">
-                    Jumbo Card
+                    <HeroCard imgFile="cms-banner-01.jpg" imgTitle="The Battlefield 4 Naval Strike">
+                        <div class="w-50 ms-auto pe-3">
+                            <h5 class="tag">Most Popular</h5>
+                            <h3>The Battlefield 4 Naval Strike</h3>
+                        </div>
+                    </HeroCard>
                 </div>
                 <div class="col">
-                    Jumbo Card
+                    <HeroCard imgFile="cms-banner-02.jpg" imgTitle="Assassin's Creed Unity Game">
+                        <div class="w-50 ms-auto pe-3">
+                            <h5 class="tag">Latest Game</h5>
+                            <h3>Assassin's Creed Unity Game</h3>
+                        </div>
+                    </HeroCard>
                 </div>
             </div>
         </section>
@@ -94,10 +104,20 @@ export default {
         <section class="bg-success container py-5">
             <div class="row row-cols-2">
                 <div class="col">
-                    Jumbo Card
+                    <HeroCard imgFile="cms-banner-03.jpg" imgTitle="Dragon's Dogma Video Game">
+                        <div class="w-50 ms-auto pe-3">
+                            <h5 class="tag">20% Discount</h5>
+                            <h3>Dragon's Dogma Video Game</h3>
+                        </div>
+                    </HeroCard>
                 </div>
                 <div class="col">
-                    Jumbo Card
+                    <HeroCard imgFile="cms-banner-04.jpg" imgTitle="World Of Tanks New Game">
+                        <div class="w-50 ms-auto pe-3">
+                            <h5 class="tag">30% Discount</h5>
+                            <h3>World Of Tanks New Game</h3>
+                        </div>
+                    </HeroCard>
                 </div>
             </div>
         </section>

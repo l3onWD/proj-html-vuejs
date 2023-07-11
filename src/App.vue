@@ -4,9 +4,10 @@
 -------------------------------------------*/
 /*** COMPONENTS ***/
 import PageHeader from './components/PageHeader.vue';
+import PageMain from './components/PageMain.vue';
 
 export default {
-    components: { PageHeader }
+    components: { PageHeader, PageMain }
 
 
 }
@@ -15,6 +16,8 @@ export default {
 
 <template>
     <PageHeader />
+
+    <PageMain />
 </template>
 
 

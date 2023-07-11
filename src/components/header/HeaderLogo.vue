@@ -13,4 +13,8 @@ export default {
 </template>
 
 
-<style></style>
+<style scoped>
+img {
+    height: 33px;
+}
+</style>

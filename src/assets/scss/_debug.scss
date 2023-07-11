@@ -1,0 +1,25 @@
+/* -----------------------------------------
+! DEBUG
+-------------------------------------------*/
+section,
+.container,
+.row,
+[class^='col'] {
+    border: 2px dashed transparent;
+}
+
+section {
+    border-color: violet;
+}
+
+.container {
+    border-color: blue;
+}
+
+.row {
+    border-color: white;
+}
+
+[class^='col'] {
+    border-color: yellow;
+}

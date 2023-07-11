@@ -45,7 +45,7 @@ export default {
         position: absolute;
         top: 100%;
         left: 0;
-        min-width: 100%;
+
 
         background-color: $col-dark;
         border: 1px solid $col-darkgray;

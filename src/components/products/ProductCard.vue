@@ -64,7 +64,7 @@ export default {
         </div>
 
         <!-- Body -->
-        <div class="product-info">
+        <div class="product-info p-3">
 
             <!-- Vote -->
             <div>
@@ -83,6 +83,9 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '@/assets/scss/vars' as *;
+
+
 .product-image {
     position: relative;
 
@@ -91,5 +94,9 @@ export default {
         top: 10px;
         left: 10px;
     }
+}
+
+.product-info {
+    background-color: $col-dark;
 }
 </style>

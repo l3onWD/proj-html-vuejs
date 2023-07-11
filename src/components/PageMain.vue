@@ -3,8 +3,8 @@
 * RESOURCES
 -------------------------------------------*/
 /*** COMPONENTS ***/
-import ProductSection from '@/components/section/ProductSection.vue';
-import ProductCard from '@/components/products/ProductCard.vue';
+import ProductSection from '@/components/products/ProductSection.vue';
+import ProductDealsSection from '@/components/products/ProductDealsSection.vue';
 import BlogCard from '@/components/blog/BlogCard.vue';
 
 /*** DATA ***/
@@ -12,7 +12,7 @@ import { store } from '@/data/store';
 
 
 export default {
-    components: { ProductCard, BlogCard, ProductSection },
+    components: { BlogCard, ProductSection, ProductDealsSection },
 
     data() {
         return {
@@ -104,22 +104,7 @@ export default {
 
 
         <!-- Deals -->
-        <section class="bg-danger container py-5">
-
-            <!-- Counter -->
-            <ul class="d-flex gap-3 justify-content-center py-3">
-                <li>123 days</li>
-                <li>24 hours</li>
-                <li>12 mins</li>
-                <li>17 secs</li>
-            </ul>
-
-            <div class="row row-cols-4">
-                <div v-for="product in store.productDeals" :key="product.id" class="col">
-                    <ProductCard v-bind="product" />
-                </div>
-            </div>
-        </section>
+        <ProductDealsSection />
 
 
         <!-- Testimonials -->

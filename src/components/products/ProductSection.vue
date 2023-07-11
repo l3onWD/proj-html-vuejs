@@ -35,10 +35,11 @@ export default {
 <template>
     <section class="bg-danger container py-5">
 
-        <!-- Filters -->
-        <BaseNavTabs :tabList="[{ value: 'featured', text: 'Featured' },
-        { value: 'new', text: 'New Arrival' },
-        { value: 'best', text: 'Best Sellers' }]" @tab-changed="onProductsFilterChange" />
+        <!-- Filter -->
+        <BaseNavTabs :tabList="[
+            { value: 'featured', text: 'Featured' },
+            { value: 'new', text: 'New Arrival' },
+            { value: 'best', text: 'Best Sellers' }]" @tab-changed="onProductsFilterChange" />
 
         <!-- Product List -->
         <div class="row row-cols-4">

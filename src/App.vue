@@ -55,6 +55,11 @@ export default {
             store.blogs = blogList;
         },
 
+
+        /*
+        * FILTERING
+        */
+
         searchProducts() {
             if (!store.productsFilter) this.fetchProducts('');
             else this.fetchProducts(store.productsFilter);

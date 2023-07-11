@@ -60,7 +60,7 @@ export default {
         <div class="product-image">
             <img v-if="!isSelected" :src="imgFrontPath" :alt="name" class="img-fluid">
             <img v-else :src="imgBackPath" :alt="name" class="img-fluid">
-            <div v-if="discount" class="product-discount">{{ discountString }}</div>
+            <div v-if="discount" class="product-discount tag">{{ discountString }}</div>
         </div>
 
         <!-- Body -->

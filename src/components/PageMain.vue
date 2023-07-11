@@ -6,16 +6,16 @@
 import ProductSection from '@/components/products/ProductSection.vue';
 import ProductDealsSection from '@/components/products/ProductDealsSection.vue';
 import HeroSection from '@/components/promotions/HeroSection.vue';
+import CtaButton from '@/components/promotions/CtaButton.vue';
 import HeroCard from '@/components/promotions/HeroCard.vue';
 import BlogCard from '@/components/blog/BlogCard.vue';
 
 /*** DATA ***/
 import { store } from '@/data/store';
 
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 export default {
-    components: { BlogCard, ProductSection, ProductDealsSection, HeroCard, HeroSection, FontAwesomeIcon },
+    components: { BlogCard, ProductSection, ProductDealsSection, HeroCard, HeroSection, CtaButton },
 
     data() {
         return {
@@ -43,43 +43,19 @@ export default {
             <div class="row row-cols-4">
 
                 <div class="col">
-                    <div class="d-flex align-items-center">
-                        <FontAwesomeIcon icon="fas fa-truck" size="2xl" />
-                        <div class="ms-3">
-                            <p class="mb-0">Free Delivery</p>
-                            <p class="text-gray mb-0">Free Shipping On All Order</p>
-                        </div>
-                    </div>
+                    <CtaButton iconClass="truck" text="Free Delivery" description="Free Shipping On All Order" />
                 </div>
 
                 <div class="col">
-                    <div class="d-flex align-items-center">
-                        <FontAwesomeIcon icon="fas fa-sack-dollar" size="2xl" />
-                        <div class="ms-3">
-                            <p class="mb-0">Money Return</p>
-                            <p class="text-gray mb-0">Back Guarantee in 7 days</p>
-                        </div>
-                    </div>
+                    <CtaButton iconClass="sack-dollar" text="Money Return" description="Back Guarantee in 7 days" />
                 </div>
 
                 <div class="col">
-                    <div class="d-flex align-items-center">
-                        <FontAwesomeIcon icon="fas fa-percent" size="2xl" />
-                        <div class="ms-3">
-                            <p class="mb-0">Member Discount</p>
-                            <p class="text-gray mb-0">On every order over €130.00</p>
-                        </div>
-                    </div>
+                    <CtaButton iconClass="percent" text="Member Discount" description="On every order over €130.00" />
                 </div>
 
                 <div class="col">
-                    <div class="d-flex align-items-center">
-                        <FontAwesomeIcon icon="fas fa-hand-holding-dollar" size="2xl" />
-                        <div class="ms-3">
-                            <p class="mb-0">Return Policy</p>
-                            <p class="text-gray mb-0">Support 24 hours a day</p>
-                        </div>
-                    </div>
+                    <CtaButton iconClass="hand-holding-dollar" text="Return Policy" description="Support 24 hours a day" />
                 </div>
             </div>
 
@@ -87,7 +63,7 @@ export default {
 
 
         <!-- Featured -->
-        <section class="bg-danger container py-5">
+        <section class="container py-5">
             <div class="row row-cols-2">
                 <div class="col">
                     <HeroCard imgFile="cms-banner-01.jpg" imgTitle="The Battlefield 4 Naval Strike">

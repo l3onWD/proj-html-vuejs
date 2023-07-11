@@ -1,6 +1,7 @@
 <script>
 /*** COMPONENTS ***/
 import ProductCard from '@/components/products/ProductCard.vue';
+import ProductsFilter from '@/components/products/ProductsFilter.vue';
 import BlogCard from '@/components/blog/BlogCard.vue';
 
 /*** DATA ***/
@@ -8,12 +9,14 @@ import { store } from '@/data/store';
 
 
 export default {
-    components: { ProductCard, BlogCard },
+    components: { ProductCard, ProductsFilter, BlogCard },
     data() {
         return {
             store
         };
-    }
+    },
+
+    emits: ['products-filter-clicked']
 
 
 }
@@ -83,11 +86,7 @@ export default {
         <section class="bg-danger container py-5">
 
             <!-- Filters -->
-            <ul class="d-flex gap-3 justify-content-center py-3">
-                <li><button>Featured</button></li>
-                <li><button>New Arrival</button></li>
-                <li><button>Best Sellers</button></li>
-            </ul>
+            <ProductsFilter @products-filter-clicked="$emit('products-filter-clicked')" />
 
             <div class="row row-cols-4">
                 <div v-for="product in store.products" :key="product.id" class="col">

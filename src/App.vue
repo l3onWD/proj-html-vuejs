@@ -23,6 +23,10 @@ export default {
         fetchProducts(endpoint) {
 
             switch (endpoint) {
+                case '':
+                    store.products = productList;
+                    break;
+
                 case 'featured':
                     store.products = productList.filter(({ featured }) => featured);
                     break;
@@ -30,11 +34,13 @@ export default {
                 case 'new':
                     const newProducts = [...productList];
                     newProducts.sort((a, b) => b.created - a.created).slice(0, 6);
+                    store.products = newProducts;
                     break;
 
                 case 'best':
                     const bestProducts = [...productList];
                     bestProducts.sort((a, b) => b.totalSell - a.totalSell).slice(0, 6);
+                    store.products = bestProducts;
                     break;
 
                 case 'deals':
@@ -49,6 +55,11 @@ export default {
 
         fetchBlogs() {
             store.blogs = blogList;
+        },
+
+        searchProducts() {
+            if (!store.productsFilter) this.fetchProducts('');
+            else this.fetchProducts(store.productsFilter);
         }
     },
 
@@ -67,7 +78,7 @@ export default {
 <template>
     <PageHeader />
 
-    <PageMain />
+    <PageMain @products-filter-clicked="searchProducts" />
 </template>
 
 

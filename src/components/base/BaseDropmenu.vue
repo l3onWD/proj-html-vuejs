@@ -51,6 +51,7 @@ export default {
         border: 1px solid $col-darkgray;
 
         box-shadow: 0 0 8px 2px rgba($color: #000, $alpha: 0.2);
+        z-index: 1;
 
         a {
             padding: 0.25rem 1rem;

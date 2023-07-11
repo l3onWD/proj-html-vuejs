@@ -7,6 +7,7 @@ import ProductSection from '@/components/products/ProductSection.vue';
 import ProductDealsSection from '@/components/products/ProductDealsSection.vue';
 import CtaButton from '@/components/cta/CtaButton.vue';
 import CtaCard from '@/components/cta/CtaCard.vue';
+import CategoryCard from '@/components/categories/CategoryCard.vue';
 import BlogCard from '@/components/blog/BlogCard.vue';
 
 /*** DATA ***/
@@ -14,7 +15,7 @@ import { store } from '@/data/store';
 
 
 export default {
-    components: { BlogCard, ProductSection, ProductDealsSection, CtaCard, CtaButton },
+    components: { BlogCard, ProductSection, ProductDealsSection, CtaCard, CtaButton, CategoryCard },
 
     data() {
         return {
@@ -23,8 +24,6 @@ export default {
     },
 
     emits: ['products-filter-changed']
-
-
 }
 </script>
 
@@ -32,9 +31,9 @@ export default {
 <template>
     <main>
 
-        <!-- Jumbotron -->
+        <!-- CTA Section -->
         <section>
-            <CtaCard imgFile="cms-banner-03.jpg">
+            <CtaCard imgFile="cms-banner-03.jpg" imgTitle="Jumbotron 01">
                 <div class="container">
                     <h3 class="tag mb-3">Upcoming</h3>
                     <h2 class="mb-5">Jumbotron 01</h2>
@@ -72,7 +71,9 @@ export default {
 
         <!-- Featured -->
         <section class="container py-5">
+
             <div class="row row-cols-2">
+
                 <div class="col">
                     <CtaCard imgFile="cms-banner-01.jpg" imgTitle="The Battlefield 4 Naval Strike">
                         <div class="w-50 ms-auto pe-3">
@@ -81,6 +82,7 @@ export default {
                         </div>
                     </CtaCard>
                 </div>
+
                 <div class="col">
                     <CtaCard imgFile="cms-banner-02.jpg" imgTitle="Assassin's Creed Unity Game">
                         <div class="w-50 ms-auto pe-3">
@@ -89,21 +91,26 @@ export default {
                         </div>
                     </CtaCard>
                 </div>
+
             </div>
+
         </section>
 
 
         <!-- Categories -->
-        <section class="bg-success container py-5">
+        <section class="container py-5">
+
+            <h3 class="text-center mb-5">Special Category</h3>
+
             <div class="row row-cols-3">
                 <div class="col">
-                    Category Card
+                    <CategoryCard imgFile="category-image-01-446x550_t.jpg" name="Batman" />
                 </div>
                 <div class="col">
-                    Category Card
+                    <CategoryCard imgFile="category-image-02-446x550_t.jpg" name="Bayonetta" />
                 </div>
                 <div class="col">
-                    Category Card
+                    <CategoryCard imgFile="category-image-03-446x550_t.jpg" name="Dark Souls" />
                 </div>
             </div>
         </section>

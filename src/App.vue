@@ -6,6 +6,9 @@
 import PageHeader from './components/PageHeader.vue';
 import PageMain from './components/PageMain.vue';
 
+/*** DATA ***/
+import { productList } from '@/data/';
+
 export default {
     components: { PageHeader, PageMain }
 

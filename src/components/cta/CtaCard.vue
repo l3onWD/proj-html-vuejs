@@ -16,13 +16,13 @@ export default {
 
 
 <template>
-    <div class="hero-card">
+    <div class="cta-card">
 
-        <!-- Hero Image -->
-        <img :src="imgPath" :alt="imgTitle" class="hero-img">
+        <!-- CTA Image -->
+        <img :src="imgPath" :alt="imgTitle" class="cta-img">
 
-        <!-- Hero Content -->
-        <div class="hero-content">
+        <!-- CTA Content -->
+        <div class="cta-content">
             <slot></slot>
         </div>
     </div>
@@ -30,19 +30,19 @@ export default {
 
 
 <style lang="scss" scoped>
-.hero-card {
+.cta-card {
     height: 100%;
     position: relative;
 
 
-    .hero-img {
+    .cta-img {
         width: 100%;
         height: 100%;
 
         object-fit: cover;
     }
 
-    .hero-content {
+    .cta-content {
         position: absolute;
         inset: 0;
 

@@ -5,9 +5,8 @@
 /*** COMPONENTS ***/
 import ProductSection from '@/components/products/ProductSection.vue';
 import ProductDealsSection from '@/components/products/ProductDealsSection.vue';
-import HeroSection from '@/components/promotions/HeroSection.vue';
-import CtaButton from '@/components/promotions/CtaButton.vue';
-import HeroCard from '@/components/promotions/HeroCard.vue';
+import CtaButton from '@/components/cta/CtaButton.vue';
+import CtaCard from '@/components/cta/CtaCard.vue';
 import BlogCard from '@/components/blog/BlogCard.vue';
 
 /*** DATA ***/
@@ -15,7 +14,7 @@ import { store } from '@/data/store';
 
 
 export default {
-    components: { BlogCard, ProductSection, ProductDealsSection, HeroCard, HeroSection, CtaButton },
+    components: { BlogCard, ProductSection, ProductDealsSection, CtaCard, CtaButton },
 
     data() {
         return {
@@ -34,7 +33,16 @@ export default {
     <main>
 
         <!-- Jumbotron -->
-        <HeroSection />
+        <section>
+            <CtaCard imgFile="cms-banner-03.jpg">
+                <div class="container">
+                    <h3 class="tag mb-3">Upcoming</h3>
+                    <h2 class="mb-5">Jumbotron 01</h2>
+
+                    <button class="btn btn-light">Shop Now</button>
+                </div>
+            </CtaCard>
+        </section>
 
 
         <!-- Services -->
@@ -66,20 +74,20 @@ export default {
         <section class="container py-5">
             <div class="row row-cols-2">
                 <div class="col">
-                    <HeroCard imgFile="cms-banner-01.jpg" imgTitle="The Battlefield 4 Naval Strike">
+                    <CtaCard imgFile="cms-banner-01.jpg" imgTitle="The Battlefield 4 Naval Strike">
                         <div class="w-50 ms-auto pe-3">
                             <h5 class="tag">Most Popular</h5>
                             <h3>The Battlefield 4 Naval Strike</h3>
                         </div>
-                    </HeroCard>
+                    </CtaCard>
                 </div>
                 <div class="col">
-                    <HeroCard imgFile="cms-banner-02.jpg" imgTitle="Assassin's Creed Unity Game">
+                    <CtaCard imgFile="cms-banner-02.jpg" imgTitle="Assassin's Creed Unity Game">
                         <div class="w-50 ms-auto pe-3">
                             <h5 class="tag">Latest Game</h5>
                             <h3>Assassin's Creed Unity Game</h3>
                         </div>
-                    </HeroCard>
+                    </CtaCard>
                 </div>
             </div>
         </section>
@@ -109,20 +117,20 @@ export default {
         <section class="bg-success container py-5">
             <div class="row row-cols-2">
                 <div class="col">
-                    <HeroCard imgFile="cms-banner-03.jpg" imgTitle="Dragon's Dogma Video Game">
+                    <CtaCard imgFile="cms-banner-03.jpg" imgTitle="Dragon's Dogma Video Game">
                         <div class="w-50 ms-auto pe-3">
                             <h5 class="tag">20% Discount</h5>
                             <h3>Dragon's Dogma Video Game</h3>
                         </div>
-                    </HeroCard>
+                    </CtaCard>
                 </div>
                 <div class="col">
-                    <HeroCard imgFile="cms-banner-04.jpg" imgTitle="World Of Tanks New Game">
+                    <CtaCard imgFile="cms-banner-04.jpg" imgTitle="World Of Tanks New Game">
                         <div class="w-50 ms-auto pe-3">
                             <h5 class="tag">30% Discount</h5>
                             <h3>World Of Tanks New Game</h3>
                         </div>
-                    </HeroCard>
+                    </CtaCard>
                 </div>
             </div>
         </section>

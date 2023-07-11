@@ -138,14 +138,8 @@ export default {
         <!-- Blogs -->
         <section class="bg-danger container py-5">
             <div class="row row-cols-3">
-                <div class="col">
-                    <BlogCard />
-                </div>
-                <div class="col">
-                    <BlogCard />
-                </div>
-                <div class="col">
-                    <BlogCard />
+                <div v-for="blog in store.blogs" :key="blog.id" class="col">
+                    <BlogCard v-bind="blog" />
                 </div>
             </div>
         </section>

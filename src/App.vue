@@ -7,7 +7,7 @@ import PageHeader from './components/PageHeader.vue';
 import PageMain from './components/PageMain.vue';
 
 /*** DATA ***/
-import { productList, productDealsList } from './data/';
+import { productList, productDealsList, blogList } from './data/';
 import { store } from './data/store';
 
 
@@ -43,12 +43,18 @@ export default {
                     console.error(`#400 - Bad Request: ${endpoint} endpoint doesnt exist.`);
             }
 
+        },
+
+        fetchBlogs() {
+            store.blogs = blogList;
         }
     },
 
     created() {
         this.fetchProducts('featured');
         this.fetchProducts('deals');
+
+        this.fetchBlogs();
     }
 
 

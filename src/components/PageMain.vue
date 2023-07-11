@@ -1,5 +1,18 @@
 <script>
+/*** COMPONENTS ***/
+import ProductCard from '@/components/products/ProductCard.vue';
+
+/*** DATA ***/
+import { store } from '@/data/store';
+
+
 export default {
+    components: { ProductCard },
+    data() {
+        return {
+            store
+        };
+    }
 
 
 }
@@ -76,17 +89,8 @@ export default {
             </ul>
 
             <div class="row row-cols-4">
-                <div class="col">
-                    Product Card
-                </div>
-                <div class="col">
-                    Product Card
-                </div>
-                <div class="col">
-                    Product Card
-                </div>
-                <div class="col">
-                    Product Card
+                <div v-for="product in store.products" :key="product.id" class="col">
+                    <ProductCard v-bind="product" />
                 </div>
             </div>
         </section>
@@ -118,16 +122,16 @@ export default {
 
             <div class="row row-cols-4">
                 <div class="col">
-                    Product Card
+                    <ProductCard />
                 </div>
                 <div class="col">
-                    Product Card
+                    <ProductCard />
                 </div>
                 <div class="col">
-                    Product Card
+                    <ProductCard />
                 </div>
                 <div class="col">
-                    Product Card
+                    <ProductCard />
                 </div>
             </div>
         </section>

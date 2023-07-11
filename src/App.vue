@@ -76,7 +76,7 @@ export default {
 <template>
     <PageHeader />
 
-    <PageMain @products-filter-clicked="searchProducts" />
+    <PageMain @products-filter-changed="searchProducts" />
 </template>
 
 

@@ -1,7 +1,10 @@
 <script>
+/* -----------------------------------------
+* RESOURCES
+-------------------------------------------*/
 /*** COMPONENTS ***/
+import ProductSection from '@/components/section/ProductSection.vue';
 import ProductCard from '@/components/products/ProductCard.vue';
-import ProductsFilter from '@/components/products/ProductsFilter.vue';
 import BlogCard from '@/components/blog/BlogCard.vue';
 
 /*** DATA ***/
@@ -9,14 +12,15 @@ import { store } from '@/data/store';
 
 
 export default {
-    components: { ProductCard, ProductsFilter, BlogCard },
+    components: { ProductCard, BlogCard, ProductSection },
+
     data() {
         return {
             store
         };
     },
 
-    emits: ['products-filter-clicked']
+    emits: ['products-filter-changed']
 
 
 }
@@ -83,17 +87,7 @@ export default {
 
 
         <!-- Products -->
-        <section class="bg-danger container py-5">
-
-            <!-- Filters -->
-            <ProductsFilter @products-filter-clicked="$emit('products-filter-clicked')" />
-
-            <div class="row row-cols-4">
-                <div v-for="product in store.products" :key="product.id" class="col">
-                    <ProductCard v-bind="product" />
-                </div>
-            </div>
-        </section>
+        <ProductSection @products-filter-changed="$emit('products-filter-changed')" />
 
 
         <!-- Offers -->

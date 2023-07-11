@@ -7,7 +7,7 @@ import PageHeader from './components/PageHeader.vue';
 import PageMain from './components/PageMain.vue';
 
 /*** DATA ***/
-import { productList, productDealsList, blogList } from './data/';
+import { productList, blogList } from './data/';
 import { store } from './data/store';
 
 
@@ -24,19 +24,21 @@ export default {
 
             switch (endpoint) {
                 case 'featured':
-                    store.products = productList;
+                    store.products = productList.filter(({ featured }) => featured);
                     break;
 
                 case 'new':
-                    store.products = productList;
+                    const newProducts = [...productList];
+                    newProducts.sort((a, b) => b.created - a.created).slice(0, 6);
                     break;
 
                 case 'best':
-                    store.products = productList;
+                    const bestProducts = [...productList];
+                    bestProducts.sort((a, b) => b.totalSell - a.totalSell).slice(0, 6);
                     break;
 
                 case 'deals':
-                    store.productDeals = productDealsList;
+                    store.productDeals = productList.filter(({ deal }) => deal);;
                     break;
 
                 default:

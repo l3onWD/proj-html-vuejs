@@ -10,7 +10,8 @@ export default [
         vote: 4,
         featured: true,
         created: '2022-06-02',
-        totalSell: 5
+        totalSell: 5,
+        deal: false
     },
     {
         id: 2,
@@ -23,7 +24,8 @@ export default [
         vote: 2,
         featured: false,
         created: '2023-02-12',
-        totalSell: 3
+        totalSell: 3,
+        deal: false
     },
     {
         id: 3,
@@ -34,7 +36,8 @@ export default [
         vote: 3,
         featured: false,
         created: '2023-01-21',
-        totalSell: 10
+        totalSell: 10,
+        deal: true
     },
     {
         id: 4,
@@ -45,7 +48,8 @@ export default [
         vote: 5,
         featured: true,
         created: '2022-08-10',
-        totalSell: 9
+        totalSell: 9,
+        deal: true
     },
     {
         id: 5,
@@ -58,7 +62,8 @@ export default [
         vote: 5,
         featured: false,
         created: '2022-11-30',
-        totalSell: 21
+        totalSell: 21,
+        deal: false
     },
     {
         id: 6,
@@ -69,7 +74,8 @@ export default [
         vote: 1,
         featured: true,
         created: '2023-05-05',
-        totalSell: 12
+        totalSell: 12,
+        deal: true
     },
     {
         id: 7,
@@ -78,9 +84,10 @@ export default [
         imgFileBack: '16.jpg',
         price: 8400,
         vote: 3,
-        featured: true,
+        featured: false,
         created: '2023-07-01',
-        totalSell: 7
+        totalSell: 7,
+        deal: true
     },
     {
         id: 8,
@@ -93,7 +100,8 @@ export default [
         vote: 4,
         featured: true,
         created: '2023-04-16',
-        totalSell: 1
+        totalSell: 1,
+        deal: true
     },
     {
         id: 9,
@@ -104,6 +112,7 @@ export default [
         vote: 1,
         featured: true,
         created: '2023-07-05',
-        totalSell: 0
+        totalSell: 0,
+        deal: true
     }
 ];

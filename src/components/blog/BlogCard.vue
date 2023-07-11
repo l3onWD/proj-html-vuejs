@@ -1,6 +1,8 @@
 <script>
 export default {
+    props: {
 
+    }
 
 }
 </script>
@@ -17,10 +19,10 @@ export default {
             <!-- Meta Data -->
             <ul class="d-flex gap-2">
                 <li>
-                    date
+                    <FontAwesomeIcon icon="fas fa-calendar-days" class="text-yellow" /> date
                 </li>
                 <li>
-                    comment
+                    <FontAwesomeIcon icon="fas fa-comments" class="text-yellow" /> comment
                 </li>
             </ul>
 

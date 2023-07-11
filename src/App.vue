@@ -33,14 +33,12 @@ export default {
 
                 case 'new':
                     const newProducts = [...productList];
-                    newProducts.sort((a, b) => b.created - a.created).slice(0, 6);
-                    store.products = newProducts;
+                    store.products = newProducts.sort((a, b) => b.created - a.created).slice(0, 6);
                     break;
 
                 case 'best':
                     const bestProducts = [...productList];
-                    bestProducts.sort((a, b) => b.totalSell - a.totalSell).slice(0, 6);
-                    store.products = bestProducts;
+                    store.products = bestProducts.sort((a, b) => b.totalSell - a.totalSell).slice(0, 6);
                     break;
 
                 case 'deals':

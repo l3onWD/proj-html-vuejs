@@ -8,7 +8,7 @@ import ProductDealsSection from '@/components/products/ProductDealsSection.vue';
 import BrandSection from '@/components/brands/BrandSection.vue';
 import JumbotronSection from '@/components/cta/JumbotronSection.vue';
 import CtaCard from '@/components/cta/CtaCard.vue';
-import CtaButton from '@/components/cta/CtaButton.vue';
+import ServicesSection from '@/components/cta/ServicesSection.vue';
 import CategoryCard from '@/components/categories/CategoryCard.vue';
 import BlogsSection from '@/components/blog/BlogsSection.vue';
 import TestimonialSection from '@/components/testimonial/TestimonialSection.vue';
@@ -18,7 +18,7 @@ import { store } from '@/data/store';
 
 
 export default {
-    components: { BlogsSection, ProductSection, ProductDealsSection, CtaCard, CtaButton, CategoryCard, TestimonialSection, BrandSection, JumbotronSection },
+    components: { BlogsSection, ProductSection, ProductDealsSection, CtaCard, ServicesSection, CategoryCard, TestimonialSection, BrandSection, JumbotronSection },
 
     data() {
         return {
@@ -38,28 +38,7 @@ export default {
         <JumbotronSection />
 
         <!-- Services -->
-        <section class="container py-5">
-
-            <div class="row row-cols-4">
-
-                <div class="col">
-                    <CtaButton iconClass="truck" text="Free Delivery" description="Free Shipping On All Order" />
-                </div>
-
-                <div class="col">
-                    <CtaButton iconClass="sack-dollar" text="Money Return" description="Back Guarantee in 7 days" />
-                </div>
-
-                <div class="col">
-                    <CtaButton iconClass="percent" text="Member Discount" description="On every order over €130.00" />
-                </div>
-
-                <div class="col">
-                    <CtaButton iconClass="hand-holding-dollar" text="Return Policy" description="Support 24 hours a day" />
-                </div>
-            </div>
-
-        </section>
+        <ServicesSection />
 
 
         <!-- Featured -->

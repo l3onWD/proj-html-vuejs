@@ -54,7 +54,7 @@ export default {
 
 
 <template>
-    <ul class="d-flex gap-3 justify-content-center py-3">
+    <ul class="d-flex justify-content-center py-4">
         <li>{{ days }} days</li>
         <li>{{ hours }} hours</li>
         <li>{{ minutes }} mins</li>
@@ -63,4 +63,13 @@ export default {
 </template>
 
 
-<style></style>
+<style lang="scss" scoped>
+@use '@/assets/scss/vars' as *;
+
+
+li {
+    padding: 0.75rem 2rem;
+
+    border: 1px solid $col-darkgray;
+}
+</style>

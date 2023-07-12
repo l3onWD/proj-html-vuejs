@@ -62,8 +62,11 @@ export default {
 
             <div class="container d-flex justify-content-between py-2">
 
+                <!-- Copyright -->
                 <address>Copyright &copy; 2023</address>
 
+
+                <!-- payments -->
                 <ul class="payment-list">
                     <li>
                         <img src="../assets/img/cc/cc-american-express.png" alt="American Express" class="img-fluid">

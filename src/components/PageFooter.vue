@@ -4,18 +4,20 @@
 -------------------------------------------*/
 /*** COMPONENTS ***/
 import BaseSendForm from '@/components/base/BaseSendForm.vue';
+import BaseSocialBar from '@/components/base/BaseSocialBar.vue';
 import FooterMenu from '@/components/footer/FooterMenu.vue';
 
 /*** DATA ***/
-import { footerMenues } from '@/data/';
+import { footerMenues, socialLinks } from '@/data/';
 
 
 export default {
-    components: { FooterMenu, BaseSendForm },
+    components: { FooterMenu, BaseSendForm, BaseSocialBar },
 
     data() {
         return {
-            menues: footerMenues
+            menues: footerMenues,
+            socials: socialLinks
         };
     }
 
@@ -31,16 +33,23 @@ export default {
 
             <div class="row">
 
+                <!-- Menues -->
                 <div v-for="menu in menues" :key="menu.title" class="col">
                     <FooterMenu :title="menu.title" :links="menu.links" />
                 </div>
 
+
                 <div class="col">
+
+                    <!-- Newsletter -->
                     <div>
                         <h5 class="mb-3">Our Newsletter</h5>
                         <p class="text-gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         <BaseSendForm iconClass="paper-plane" />
                     </div>
+
+                    <!-- Social Bar -->
+                    <BaseSocialBar :socials="socials" />
                 </div>
 
             </div>

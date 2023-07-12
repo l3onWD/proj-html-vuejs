@@ -6,8 +6,9 @@
 import ProductSection from '@/components/products/ProductSection.vue';
 import ProductDealsSection from '@/components/products/ProductDealsSection.vue';
 import BrandSection from '@/components/brands/BrandSection.vue';
-import CtaButton from '@/components/cta/CtaButton.vue';
+import JumbotronSection from '@/components/cta/JumbotronSection.vue';
 import CtaCard from '@/components/cta/CtaCard.vue';
+import CtaButton from '@/components/cta/CtaButton.vue';
 import CategoryCard from '@/components/categories/CategoryCard.vue';
 import BlogsSection from '@/components/blog/BlogsSection.vue';
 import TestimonialSection from '@/components/testimonial/TestimonialSection.vue';
@@ -17,7 +18,7 @@ import { store } from '@/data/store';
 
 
 export default {
-    components: { BlogsSection, ProductSection, ProductDealsSection, CtaCard, CtaButton, CategoryCard, TestimonialSection, BrandSection },
+    components: { BlogsSection, ProductSection, ProductDealsSection, CtaCard, CtaButton, CategoryCard, TestimonialSection, BrandSection, JumbotronSection },
 
     data() {
         return {
@@ -34,17 +35,7 @@ export default {
     <main>
 
         <!-- CTA Section -->
-        <section>
-            <CtaCard imgFile="cms-banner-03.jpg" imgTitle="Jumbotron 01">
-                <div class="container">
-                    <h3 class="tag mb-3">Upcoming</h3>
-                    <h2 class="mb-5">Jumbotron 01</h2>
-
-                    <button class="btn btn-light">Shop Now</button>
-                </div>
-            </CtaCard>
-        </section>
-
+        <JumbotronSection />
 
         <!-- Services -->
         <section class="container py-5">

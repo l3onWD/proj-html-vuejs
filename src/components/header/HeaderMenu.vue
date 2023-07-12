@@ -3,10 +3,13 @@
 * RESOURCES
 -------------------------------------------*/
 /*** DATA ***/
+import BaseDropmenu from '@/components/base/BaseDropmenu.vue';
+
+/*** DATA ***/
 import { headerMenuLinks } from '@/data/';
 
 export default {
-
+    components: { BaseDropmenu },
     data() {
         return {
             links: headerMenuLinks
@@ -19,8 +22,13 @@ export default {
 
 <template>
     <ul class="d-flex justify-content-center">
-        <li v-for="link in links" :key="link.text"><a :href="link.url" :class="{ active: link.isActive }">{{ link.text
-        }}</a>
+        <li v-for="link in links" :key="link.text">
+
+            <a v-if="!link.submenu" :href="link.url" :class="{ active: link.isActive }">{{ link.text }}</a>
+
+            <BaseDropmenu v-else :links="link.submenu">
+                <a :href="link.url" :class="{ active: link.isActive }">{{ link.text }}</a>
+            </BaseDropmenu>
         </li>
     </ul>
 </template>

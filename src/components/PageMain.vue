@@ -13,18 +13,9 @@ import CategoriesSection from '@/components/categories/CategoriesSection.vue';
 import BlogsSection from '@/components/blog/BlogsSection.vue';
 import TestimonialSection from '@/components/testimonial/TestimonialSection.vue';
 
-/*** DATA ***/
-import { store } from '@/data/store';
-
 
 export default {
     components: { BlogsSection, ProductSection, ProductDealsSection, CtaCard, ServicesSection, CategoriesSection, TestimonialSection, BrandSection, JumbotronSection },
-
-    data() {
-        return {
-            store
-        };
-    },
 
     emits: ['products-filter-changed']
 }

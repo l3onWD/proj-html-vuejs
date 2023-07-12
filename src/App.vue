@@ -5,6 +5,7 @@
 /*** COMPONENTS ***/
 import PageHeader from './components/PageHeader.vue';
 import PageMain from './components/PageMain.vue';
+import PageFooter from './components/PageFooter.vue';
 
 /*** DATA ***/
 import { productList, blogList } from './data/';
@@ -12,7 +13,7 @@ import { store } from './data/store';
 
 
 export default {
-    components: { PageHeader, PageMain },
+    components: { PageHeader, PageMain, PageFooter },
 
     methods: {
 
@@ -82,6 +83,8 @@ export default {
     <PageHeader />
 
     <PageMain @products-filter-changed="searchProducts" />
+
+    <PageFooter />
 </template>
 
 

@@ -88,22 +88,22 @@ export default {
             <!-- Actions -->
             <ul class="product-actions">
                 <li>
-                    <button>
+                    <button class="btn w-100">
                         <FontAwesomeIcon icon="fas fa-shopping-bag" />
                     </button>
                 </li>
                 <li>
-                    <button>
+                    <button class="btn w-100">
                         <FontAwesomeIcon icon="fas fa-heart" />
                     </button>
                 </li>
                 <li>
-                    <button>
+                    <button class="btn w-100">
                         <FontAwesomeIcon icon="fas fa-maximize" />
                     </button>
                 </li>
                 <li>
-                    <button>
+                    <button class="btn w-100">
                         <FontAwesomeIcon icon="fas fa-eye" />
                     </button>
                 </li>
@@ -157,11 +157,6 @@ export default {
 
         &>*:first-child {
             border-left: none;
-        }
-
-        button {
-            padding: 0.5rem;
-            width: 100%;
         }
 
     }

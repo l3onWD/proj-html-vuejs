@@ -174,6 +174,3 @@ export default {
 
     </main>
 </template>
-
-
-<style></style>

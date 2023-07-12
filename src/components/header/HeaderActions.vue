@@ -11,21 +11,21 @@ export default {
 
         <!-- Search Products -->
         <li>
-            <button class="h-100 p-3">
+            <button class="h-100 btn">
                 <FontAwesomeIcon icon="fas fa-search" />
             </button>
         </li>
 
         <!-- User Account -->
         <li>
-            <button class="h-100 p-3">
+            <button class="h-100 btn">
                 <FontAwesomeIcon icon="fas fa-user" />
             </button>
         </li>
 
         <!-- Shopping Cart -->
         <li>
-            <button class="h-100 p-3">
+            <button class="h-100 btn">
                 <FontAwesomeIcon icon="fas fa-bag-shopping" /><span class="ms-2 text-yellow">(0) €0.00</span>
             </button>
         </li>

@@ -9,13 +9,14 @@ import CtaButton from '@/components/cta/CtaButton.vue';
 import CtaCard from '@/components/cta/CtaCard.vue';
 import CategoryCard from '@/components/categories/CategoryCard.vue';
 import BlogCard from '@/components/blog/BlogCard.vue';
+import TestimonialSection from '@/components/testimonial/TestimonialSection.vue';
 
 /*** DATA ***/
 import { store } from '@/data/store';
 
 
 export default {
-    components: { BlogCard, ProductSection, ProductDealsSection, CtaCard, CtaButton, CategoryCard },
+    components: { BlogCard, ProductSection, ProductDealsSection, CtaCard, CtaButton, CategoryCard, TestimonialSection },
 
     data() {
         return {
@@ -150,9 +151,7 @@ export default {
 
 
         <!-- Testimonials -->
-        <section class="bg-success container py-5 text-center">
-            Testimonial Card
-        </section>
+        <TestimonialSection />
 
 
         <!-- Blogs -->

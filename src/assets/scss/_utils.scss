@@ -12,3 +12,9 @@
 .text-gray {
     color: $col-gray;
 }
+
+/*** MISC ***/
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}

@@ -3,6 +3,41 @@
 -------------------------------------------*/
 @use './vars' as *;
 
+
+/*** BUTTONS ***/
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid transparent;
+    text-decoration: none;
+
+    color: inherit;
+
+    &.btn-light {
+        padding: 0.75rem 2rem;
+
+        color: #000;
+        background-color: #fff;
+
+        &:hover {
+            background-color: $col-yellow;
+            border-color: $col-yellow;
+        }
+    }
+
+    &.btn-outline-light {
+        padding: 0.75rem 2rem;
+
+        color: #fff;
+        border: 1px solid $col-darkgray;
+
+        &:hover {
+            color: $col-yellow;
+        }
+    }
+}
+
+
 /*** SEPARATORS ***/
 .vertical-separator {
     position: relative;

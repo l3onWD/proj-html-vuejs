@@ -33,8 +33,9 @@ export default {
     <nav>
         <ul class="d-flex justify-content-center py-4">
             <li v-for="tab in tabList" :key="tab.text">
-                <button @click="onTabClicked(tab.value)" :class="{ active: tab.value === activeTab }">{{ tab.text
-                }}</button>
+                <button @click="onTabClicked(tab.value)" :class="{ active: tab.value === activeTab }"
+                    class="btn btn-outline-light">{{ tab.text
+                    }}</button>
             </li>
         </ul>
     </nav>
@@ -45,10 +46,6 @@ export default {
 @use '@/assets/scss/vars' as *;
 
 button {
-    padding: 0.75rem 2rem;
-
-    border: 1px solid $col-darkgray;
-
     &.active {
         color: $col-yellow;
     }

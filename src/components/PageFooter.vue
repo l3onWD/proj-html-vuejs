@@ -3,6 +3,7 @@
 * RESOURCES
 -------------------------------------------*/
 /*** COMPONENTS ***/
+import BaseSendForm from '@/components/base/BaseSendForm.vue';
 import FooterMenu from '@/components/footer/FooterMenu.vue';
 
 /*** DATA ***/
@@ -10,7 +11,7 @@ import { footerMenues } from '@/data/';
 
 
 export default {
-    components: { FooterMenu },
+    components: { FooterMenu, BaseSendForm },
 
     data() {
         return {
@@ -35,7 +36,11 @@ export default {
                 </div>
 
                 <div class="col">
-                    <FooterMenu />
+                    <div>
+                        <h5 class="mb-3">Our Newsletter</h5>
+                        <p class="text-gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <BaseSendForm iconClass="paper-plane" />
+                    </div>
                 </div>
 
             </div>

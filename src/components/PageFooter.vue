@@ -28,6 +28,18 @@ export default {
         <!-- Footer Top -->
         <div class="container footer-top">
 
+            <div class="row">
+
+                <div v-for="menu in menues" :key="menu.title" class="col">
+                    <FooterMenu :title="menu.title" :links="menu.links" />
+                </div>
+
+                <div class="col">
+                    <FooterMenu />
+                </div>
+
+            </div>
+
         </div>
 
 

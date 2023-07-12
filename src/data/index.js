@@ -9,6 +9,7 @@ import contactLinks from './_contactLinks';
 import testimonialList from './_testimonialList';
 import footerMenues from './_footerMenues';
 import socialLinks from './_socialLinks';
+import ctaList from './_ctaList';
 
 
-export { headerMenuLinks, contactLinks, productList, blogList, testimonialList, footerMenues, socialLinks };
+export { headerMenuLinks, contactLinks, productList, blogList, testimonialList, footerMenues, socialLinks, ctaList };

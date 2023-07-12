@@ -4,6 +4,7 @@
 -------------------------------------------*/
 /*** COMPONENTS ***/
 import BaseNavTabs from '@/components/base/BaseNavTabs.vue';
+import BaseCarousel from '@/components/base/BaseCarousel.vue';
 import ProductCard from '@/components/products/ProductCard.vue';
 
 /*** DATA ***/
@@ -11,7 +12,7 @@ import { store } from '@/data/store';
 
 
 export default {
-    components: { ProductCard, BaseNavTabs },
+    components: { ProductCard, BaseNavTabs, BaseCarousel },
 
     data() {
         return {
@@ -33,7 +34,7 @@ export default {
 
 
 <template>
-    <section class="bg-danger container py-5">
+    <section class="container py-5">
 
         <!-- Filter -->
         <BaseNavTabs :tabList="[
@@ -41,12 +42,13 @@ export default {
             { value: 'new', text: 'New Arrival' },
             { value: 'best', text: 'Best Sellers' }]" @tab-changed="onProductsFilterChange" />
 
+
         <!-- Product List -->
-        <div class="row row-cols-4">
+        <BaseCarousel :visible-slides="4">
             <div v-for="product in store.products" :key="product.id" class="col">
                 <ProductCard v-bind="product" />
             </div>
-        </div>
+        </BaseCarousel>
 
     </section>
 </template>

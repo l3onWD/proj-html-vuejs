@@ -2,14 +2,16 @@
 /* -----------------------------------------
 * RESOURCES
 -------------------------------------------*/
-/*** DATA ***/
+/*** COMPONENTS ***/
 import BaseDropmenu from '@/components/base/BaseDropmenu.vue';
 
 /*** DATA ***/
 import { headerMenuLinks } from '@/data/';
 
+
 export default {
     components: { BaseDropmenu },
+
     data() {
         return {
             links: headerMenuLinks
@@ -39,7 +41,7 @@ export default {
 
 
 a {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.4rem;
 
     display: block;
     font-size: 1.1rem;

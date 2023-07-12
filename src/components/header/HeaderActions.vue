@@ -11,21 +11,21 @@ export default {
 
         <!-- Search Products -->
         <li>
-            <button>
+            <button class="h-100 p-3">
                 <FontAwesomeIcon icon="fas fa-search" />
             </button>
         </li>
 
         <!-- User Account -->
         <li>
-            <button>
+            <button class="h-100 p-3">
                 <FontAwesomeIcon icon="fas fa-user" />
             </button>
         </li>
 
         <!-- Shopping Cart -->
         <li>
-            <button>
+            <button class="h-100 p-3">
                 <FontAwesomeIcon icon="fas fa-bag-shopping" /><span class="ms-2 text-yellow">(0) €0.00</span>
             </button>
         </li>
@@ -33,12 +33,8 @@ export default {
 </template>
 
 
-<style lang="scss" scoped>
-button {
-    padding: 0.75rem;
-
-    & svg {
-        font-size: 1.3rem;
-    }
+<style scoped>
+svg {
+    font-size: 1.3rem;
 }
 </style>

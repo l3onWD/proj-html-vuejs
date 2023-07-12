@@ -55,7 +55,7 @@ export default {
 
                     <!-- Right Panel -->
                     <li>
-                        <a href="#" class="pe-0">123456748</a>
+                        <a href="#" class="pe-0">Call 24/7 . 800-8754-987</a>
                     </li>
 
                 </ul>
@@ -77,7 +77,7 @@ export default {
                     </li>
 
                     <!-- Actions -->
-                    <li class="col-auto">
+                    <li class="col-auto align-self-stretch">
                         <HeaderActions />
                     </li>
                 </ul>
@@ -102,13 +102,10 @@ header {
     color: $col-gray;
     border-bottom: 1px solid $col-darkgray;
 
-    & a {
-        display: inline-block;
-    }
-
-    & a,
-    & button {
+    a {
         padding: 0.5rem 1.5rem;
+
+        display: inline-block;
     }
 }
 </style>

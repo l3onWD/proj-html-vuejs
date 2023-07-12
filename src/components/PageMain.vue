@@ -9,7 +9,7 @@ import BrandSection from '@/components/brands/BrandSection.vue';
 import JumbotronSection from '@/components/cta/JumbotronSection.vue';
 import CtaCard from '@/components/cta/CtaCard.vue';
 import ServicesSection from '@/components/cta/ServicesSection.vue';
-import CategoryCard from '@/components/categories/CategoryCard.vue';
+import CategoriesSection from '@/components/categories/CategoriesSection.vue';
 import BlogsSection from '@/components/blog/BlogsSection.vue';
 import TestimonialSection from '@/components/testimonial/TestimonialSection.vue';
 
@@ -18,7 +18,7 @@ import { store } from '@/data/store';
 
 
 export default {
-    components: { BlogsSection, ProductSection, ProductDealsSection, CtaCard, ServicesSection, CategoryCard, TestimonialSection, BrandSection, JumbotronSection },
+    components: { BlogsSection, ProductSection, ProductDealsSection, CtaCard, ServicesSection, CategoriesSection, TestimonialSection, BrandSection, JumbotronSection },
 
     data() {
         return {
@@ -39,7 +39,6 @@ export default {
 
         <!-- Services -->
         <ServicesSection />
-
 
         <!-- Featured -->
         <section class="container py-5">
@@ -70,25 +69,7 @@ export default {
 
 
         <!-- Categories -->
-        <section class="container py-5">
-
-            <header>
-                <h3 class="text-center mb-5">Special Category</h3>
-            </header>
-
-            <div class="row row-cols-3">
-                <div class="col">
-                    <CategoryCard imgFile="category-image-01-446x550_t.jpg" name="Batman" />
-                </div>
-                <div class="col">
-                    <CategoryCard imgFile="category-image-02-446x550_t.jpg" name="Bayonetta" />
-                </div>
-                <div class="col">
-                    <CategoryCard imgFile="category-image-03-446x550_t.jpg" name="Dark Souls" />
-                </div>
-            </div>
-        </section>
-
+        <CategoriesSection />
 
         <!-- Products -->
         <ProductSection @products-filter-changed="$emit('products-filter-changed')" />
@@ -120,14 +101,11 @@ export default {
         <!-- Deals -->
         <ProductDealsSection />
 
-
         <!-- Testimonials -->
         <TestimonialSection />
 
-
         <!-- Blogs -->
         <BlogsSection />
-
 
         <!-- Brands -->
         <BrandSection />

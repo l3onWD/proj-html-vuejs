@@ -9,7 +9,7 @@ import BrandSection from '@/components/brands/BrandSection.vue';
 import CtaButton from '@/components/cta/CtaButton.vue';
 import CtaCard from '@/components/cta/CtaCard.vue';
 import CategoryCard from '@/components/categories/CategoryCard.vue';
-import BlogCard from '@/components/blog/BlogCard.vue';
+import BlogsSection from '@/components/blog/BlogsSection.vue';
 import TestimonialSection from '@/components/testimonial/TestimonialSection.vue';
 
 /*** DATA ***/
@@ -17,7 +17,7 @@ import { store } from '@/data/store';
 
 
 export default {
-    components: { BlogCard, ProductSection, ProductDealsSection, CtaCard, CtaButton, CategoryCard, TestimonialSection, BrandSection },
+    components: { BlogsSection, ProductSection, ProductDealsSection, CtaCard, CtaButton, CategoryCard, TestimonialSection, BrandSection },
 
     data() {
         return {
@@ -156,17 +156,7 @@ export default {
 
 
         <!-- Blogs -->
-        <section class="container py-5">
-            <header>
-                <h3 class="text-center mb-5">New Game Blogs</h3>
-            </header>
-
-            <div class="row row-cols-3">
-                <div v-for="blog in store.blogs" :key="blog.id" class="col">
-                    <BlogCard v-bind="blog" />
-                </div>
-            </div>
-        </section>
+        <BlogsSection />
 
 
         <!-- Brands -->

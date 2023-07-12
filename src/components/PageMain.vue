@@ -5,6 +5,7 @@
 /*** COMPONENTS ***/
 import ProductSection from '@/components/products/ProductSection.vue';
 import ProductDealsSection from '@/components/products/ProductDealsSection.vue';
+import BrandSection from '@/components/brands/BrandSection.vue';
 import CtaButton from '@/components/cta/CtaButton.vue';
 import CtaCard from '@/components/cta/CtaCard.vue';
 import CategoryCard from '@/components/categories/CategoryCard.vue';
@@ -16,7 +17,7 @@ import { store } from '@/data/store';
 
 
 export default {
-    components: { BlogCard, ProductSection, ProductDealsSection, CtaCard, CtaButton, CategoryCard, TestimonialSection },
+    components: { BlogCard, ProductSection, ProductDealsSection, CtaCard, CtaButton, CategoryCard, TestimonialSection, BrandSection },
 
     data() {
         return {
@@ -169,27 +170,7 @@ export default {
 
 
         <!-- Brands -->
-        <section class="bg-success container py-5">
-
-            <div class="row row-cols-5">
-                <div class="col">
-                    Brand
-                </div>
-                <div class="col">
-                    Brand
-                </div>
-                <div class="col">
-                    Brand
-                </div>
-                <div class="col">
-                    Brand
-                </div>
-                <div class="col">
-                    Brand
-                </div>
-            </div>
-
-        </section>
+        <BrandSection />
 
     </main>
 </template>

@@ -6,7 +6,6 @@ export default {
         };
     },
     props: {
-        text: String,
         links: Array
     }
 }
@@ -14,16 +13,15 @@ export default {
 
 
 <template>
-    <div class="dropmenu">
+    <div @mouseover="isActive = true" @mouseleave="isActive = false" class="dropmenu">
 
-        <!-- Toggler -->
-        <button @click="isActive = !isActive">{{ text }}
-            <FontAwesomeIcon icon="fas fa-angle-down" />
-        </button>
+        <slot></slot>
 
         <!-- Menu content -->
         <ul v-if="isActive">
-            <li v-for="link in links" :key="link.text"><a :href="link.url">{{ link.text }}</a></li>
+            <li v-for="link in links" :key="link.text">
+                <a :href="link.url">{{ link.text }}</a>
+            </li>
         </ul>
 
     </div>
@@ -36,16 +34,12 @@ export default {
 .dropmenu {
     position: relative;
 
-    button {
-        padding: 0.5rem 1.5rem;
-    }
-
     ul {
         padding: 0.75rem 0;
         position: absolute;
         top: 100%;
         left: 0;
-
+        min-width: 150px;
 
         background-color: $col-dark;
         border: 1px solid $col-darkgray;

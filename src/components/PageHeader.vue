@@ -41,7 +41,11 @@ export default {
 
                             <li>
 
-                                <BaseDropmenu text="Need Help?" :links="contactLinks" />
+                                <BaseDropmenu :links="contactLinks">
+                                    <a href="#">Need Help?
+                                        <FontAwesomeIcon icon="fas fa-angle-down" />
+                                    </a>
+                                </BaseDropmenu>
 
 
                             </li>

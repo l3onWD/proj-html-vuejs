@@ -17,7 +17,8 @@ export default {
         vote: Number,
         featured: Boolean,
         created: String,
-        totalSell: Number
+        totalSell: Number,
+        deal: Boolean
     },
 
     computed: {

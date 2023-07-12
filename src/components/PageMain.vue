@@ -123,7 +123,7 @@ export default {
 
 
         <!-- Offers -->
-        <section class="bg-success container py-5">
+        <section class="container py-5">
             <div class="row row-cols-2">
                 <div class="col">
                     <CtaCard imgFile="cms-banner-03.jpg" imgTitle="Dragon's Dogma Video Game">

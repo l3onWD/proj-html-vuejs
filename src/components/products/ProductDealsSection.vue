@@ -3,15 +3,16 @@
 * RESOURCES
 -------------------------------------------*/
 /*** COMPONENTS ***/
-import ProductCard from '@/components/products/ProductCard.vue';
 import BaseDateCounter from '@/components/base/BaseDateCounter.vue';
+import BaseCarousel from '@/components/base/BaseCarousel.vue';
+import ProductCard from '@/components/products/ProductCard.vue';
 
 /*** DATA ***/
 import { store } from '@/data/store';
 
 
 export default {
-    components: { ProductCard, BaseDateCounter },
+    components: { ProductCard, BaseDateCounter, BaseCarousel },
 
     data() {
         return {
@@ -24,17 +25,18 @@ export default {
 
 
 <template>
-    <section class="bg-danger container py-5">
+    <section class="container py-5">
 
         <!-- Counter -->
         <BaseDateCounter :date="new Date('2023-07-18').getTime()" />
 
         <!-- Product Deals List -->
-        <div class="row row-cols-4">
+        <BaseCarousel :visible-slides="4">
             <div v-for="product in store.productDeals" :key="product.id" class="col">
                 <ProductCard v-bind="product" />
             </div>
-        </div>
+        </BaseCarousel>
+
     </section>
 </template>
 

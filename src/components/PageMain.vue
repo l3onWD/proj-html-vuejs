@@ -155,7 +155,7 @@ export default {
 
 
         <!-- Blogs -->
-        <section class="bg-danger container py-5">
+        <section class="container py-5">
             <header>
                 <h3 class="text-center mb-5">New Game Blogs</h3>
             </header>

@@ -30,13 +30,29 @@ export default {
     <div class="blog-card p-2">
 
         <!-- Blog Image -->
-        <img :src="imgPath" :alt="title" class="img-fluid">
+        <div class="blog-image">
+            <img :src="imgPath" :alt="title" class="img-fluid">
+
+            <ul class="blog-actions">
+                <li>
+                    <button>
+                        <FontAwesomeIcon icon="fas fa-plus" size="xl" />
+                    </button>
+                </li>
+
+                <li>
+                    <button>
+                        <FontAwesomeIcon icon="fas fa-link" size="xl" />
+                    </button>
+                </li>
+            </ul>
+        </div>
 
         <!-- Blog Info -->
         <div>
             <!-- Meta Data -->
-            <ul class="d-flex gap-2">
-                <li>
+            <ul class="d-flex my-2">
+                <li class="me-3">
                     <FontAwesomeIcon icon="fas fa-calendar-days" class="text-yellow" /> {{ dateString }}
                 </li>
                 <li>
@@ -51,4 +67,36 @@ export default {
 </template>
 
 
-<style></style>
+<style lang="scss" scoped>
+.blog-card {
+
+    .blog-image {
+        position: relative;
+
+        .blog-actions {
+            position: absolute;
+            inset: 0;
+
+            display: none;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+
+            background-color: rgba($color: #000, $alpha: 0.5);
+        }
+
+        &:hover .blog-actions {
+            display: flex;
+        }
+
+        button {
+            width: 40px;
+            height: 40px;
+
+            border: 1px solid #fff;
+            border-radius: 50%;
+        }
+
+    }
+}
+</style>

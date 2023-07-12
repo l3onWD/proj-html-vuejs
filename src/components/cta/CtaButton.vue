@@ -14,10 +14,10 @@ export default {
 <template>
     <button>
         <FontAwesomeIcon :icon="['fas', iconClass]" size="2xl" />
-        <div class="text-start ms-3">
-            <p class="mb-0">{{ text }}</p>
-            <p class="text-gray mb-0">{{ description }}</p>
-        </div>
+        <span class="d-flex flex-column align-items-start ms-3">
+            <span>{{ text }}</span>
+            <span class="text-gray">{{ description }}</span>
+        </span>
     </button>
 </template>
 

@@ -10,7 +10,8 @@ export default {
     props: {
         navDots: Boolean,
         visibleSlides: Number,
-        totalSlides: Number
+        totalSlides: Number,
+        infinite: Boolean
     },
 
     computed: {
@@ -37,8 +38,14 @@ export default {
         },
 
         slideTo(direction) {
-            if (direction === 'prev' && this.index > 0) this.index--;
-            else if (direction === 'next' && this.index < this.maxIndex) this.index++;
+            if (direction === 'prev' && --this.index < 0) {
+                if (this.infinite) this.index = this.maxIndex;
+                else this.index = 0;
+
+            } else if (direction === 'next' && ++this.index > this.maxIndex) {
+                if (this.infinite) this.index = 0;
+                else this.index = this.maxIndex;
+            }
         }
     }
 
@@ -57,18 +64,19 @@ export default {
         <!-- Nav Arrows -->
         <div v-if="!navDots">
 
-            <button v-show="index" @click="slideTo('prev')" class="nav-arrow nav-prev">
+            <button v-show="infinite || index" @click="slideTo('prev')" class="nav-arrow nav-prev">
                 <FontAwesomeIcon icon="fas fa-circle-chevron-left" size="2xl" />
             </button>
 
-            <button v-show="index < maxIndex" @click="slideTo('next')" class="nav-arrow nav-next">
+            <button v-show="infinite || index < maxIndex" @click="slideTo('next')" class="nav-arrow nav-next">
                 <FontAwesomeIcon icon="fas fa-circle-chevron-right" size="2xl" />
             </button>
         </div>
 
         <!-- Nav Dots -->
         <div v-else class="nav-dots">
-            <button @click="setIndex(n - 1)" v-for="n in 3" :key="n" :class="{ 'text-yellow': index === (n - 1) }">
+            <button @click="setIndex(n - 1)" v-for="n in totalSlides" :key="n"
+                :class="{ 'text-yellow': index === (n - 1) }">
                 <FontAwesomeIcon icon="fas fa-circle" />
             </button>
         </div>

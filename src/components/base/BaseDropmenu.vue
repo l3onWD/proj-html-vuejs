@@ -6,6 +6,7 @@ export default {
         };
     },
     props: {
+        text: String,
         links: Array
     }
 }
@@ -13,9 +14,13 @@ export default {
 
 
 <template>
-    <div @mouseover="isActive = true" @mouseleave="isActive = false" class="dropmenu">
+    <div class="dropmenu">
 
-        <slot></slot>
+        <!-- Toggler -->
+        <button @click="isActive = !isActive" :class="{ active: isActive }">
+            {{ text }}
+            <FontAwesomeIcon icon="fas fa-angle-down" />
+        </button>
 
         <!-- Menu content -->
         <ul v-if="isActive">
@@ -31,8 +36,17 @@ export default {
 <style lang="scss" scoped>
 @use '@/assets/scss/vars' as *;
 
+
 .dropmenu {
     position: relative;
+
+    button {
+        padding: 0.5rem 1.5rem;
+
+        &.active {
+            color: $col-yellow;
+        }
+    }
 
     ul {
         padding: 0.75rem 0;

@@ -37,18 +37,14 @@ export default {
                     <li>
                         <ul class="d-flex">
 
-                            <li><a href="#" class="vertical-separator ps-0">Wishlist(0)</a></li>
+                            <li>
+                                <a href="#" class="vertical-separator ps-0">Wishlist(0)</a>
+                            </li>
 
                             <li>
-
-                                <BaseDropmenu :links="contactLinks">
-                                    <a href="#">Need Help?
-                                        <FontAwesomeIcon icon="fas fa-angle-down" />
-                                    </a>
-                                </BaseDropmenu>
-
-
+                                <BaseDropmenu :links="contactLinks" text="Need Help?" />
                             </li>
+
                         </ul>
 
                     </li>

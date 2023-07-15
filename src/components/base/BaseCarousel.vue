@@ -3,7 +3,8 @@ export default {
 
     data() {
         return {
-            index: 0
+            index: 0,
+            autoplayId: null
         };
     },
 
@@ -11,7 +12,8 @@ export default {
         navDots: Boolean,
         visibleSlides: Number,
         totalSlides: Number,
-        infinite: Boolean
+        infinite: Boolean,
+        autoplay: Number
     },
 
     computed: {
@@ -46,7 +48,23 @@ export default {
                 if (this.infinite) this.index = 0;
                 else this.index = this.maxIndex;
             }
+        },
+
+        startAutoplay() {
+
+            if (!this.autoplay) return;
+            this.autoplayId = setInterval(() => { this.slideTo('next') }, this.autoplay);
+
+        },
+
+        stopAutoplay() {
+            if (!this.autoplay) return;
+            clearInterval(this.autoplayId);
         }
+    },
+
+    created() {
+        this.startAutoplay();
     }
 
 }
@@ -54,7 +72,7 @@ export default {
 
 
 <template>
-    <div class="carousel">
+    <div class="carousel" @mouseenter="stopAutoplay" @mouseleave="startAutoplay">
 
         <!-- Slides Container -->
         <div class="carousel-items row flex-nowrap g-0" :class="carouselCols" :style="left">

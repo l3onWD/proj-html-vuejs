@@ -15,7 +15,7 @@ export default {
 
 <template>
     <section>
-        <CtaCard imgFile="cms-banner-03.jpg" imgTitle="Jumbotron 01">
+        <CtaCard imgFile="main-banner-01.jpg" imgTitle="Jumbotron 01">
 
             <div class="container">
 

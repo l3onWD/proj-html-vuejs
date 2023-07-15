@@ -23,7 +23,8 @@ export default {
     methods: {
         onProductsFilterChange(filterValue) {
             store.productsFilter = filterValue;
-            this.$emit('products-filter-changed')
+            this.$refs.productCarousel.setIndex(0);
+            this.$emit('products-filter-changed');
         }
     },
 
@@ -48,7 +49,7 @@ export default {
 
 
         <!-- Product List -->
-        <BaseCarousel :visible-slides="4">
+        <BaseCarousel :visible-slides="4" :totalSlides="store.products.length" ref="productCarousel">
             <div v-for="product in store.products" :key="product.id" class="col">
                 <ProductCard v-bind="product" />
             </div>

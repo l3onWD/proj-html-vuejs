@@ -24,10 +24,10 @@ export default {
 
 
 <template>
-    <section class="py-5 text-center">
+    <section class="container-fluid py-5 text-center">
 
         <!-- Product Deals List -->
-        <BaseCarousel :visible-slides="1" nav-dots>
+        <BaseCarousel :visible-slides="1" :totalSlides="testimonials.length" nav-dots>
             <div v-for="testimonial in testimonials" :key="testimonial.name" class="col">
                 <TestimonialCard v-bind="testimonial" />
             </div>

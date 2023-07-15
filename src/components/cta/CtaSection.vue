@@ -40,7 +40,9 @@ export default {
             <div v-for="cta in filterdCta" :key="cta.title" class="col">
                 <CtaCard :imgFile="cta.imgFile" :imgTitle="cta.title">
                     <div class="w-50 ms-auto pe-3">
-                        <h5 class="tag">{{ cta.tag }}</h5>
+                        <h5 class="tag">
+                            <span>{{ cta.tag }}</span>
+                        </h5>
                         <h3>{{ cta.title }}</h3>
                     </div>
                 </CtaCard>

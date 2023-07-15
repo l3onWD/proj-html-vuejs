@@ -59,9 +59,28 @@
 
 /*** TAGS ***/
 .tag {
-    padding: 0.25rem 1rem;
-
-    display: inline-block;
+    display: inline-flex;
     color: #000;
-    background-color: $col-yellow;
+    font-style: italic;
+    line-height: 1.5;
+
+    span {
+        padding: 0 0.5rem;
+
+        background-color: $col-yellow;
+    }
+
+    &::after {
+        content: '';
+
+        border-top: 1.5em solid $col-yellow;
+        border-right: 0.5em solid transparent;
+    }
+
+    &::before {
+        content: '';
+
+        border-bottom: 1.5em solid $col-yellow;
+        border-left: 0.5em solid transparent;
+    }
 }

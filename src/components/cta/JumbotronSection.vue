@@ -19,7 +19,9 @@ export default {
 
             <div class="container">
 
-                <h3 class="tag mb-3">Upcoming</h3>
+                <h3 class="tag mb-3">
+                    <span>Upcoming</span>
+                </h3>
 
                 <h2 class="mb-5">Jumbotron 01</h2>
 

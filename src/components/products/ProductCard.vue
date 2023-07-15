@@ -64,7 +64,9 @@ export default {
             <img v-show="isSelected" :src="imgBackPath" :alt="name" class="img-fluid">
 
             <!-- Discount -->
-            <div v-if="discount" class="product-discount tag">{{ discountString }}</div>
+            <div v-if="discount" class="product-discount tag">
+                <span>{{ discountString }}</span>
+            </div>
         </div>
 
         <!-- Info -->
@@ -128,6 +130,8 @@ export default {
             position: absolute;
             top: 10px;
             left: 10px;
+
+            font-weight: bold;
         }
     }
 

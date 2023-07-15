@@ -31,7 +31,7 @@ export default {
 
 <template>
     <nav>
-        <ul class="d-flex justify-content-center py-4">
+        <ul class="d-flex justify-content-center">
             <li v-for="tab in tabList" :key="tab.text">
                 <button @click="onTabClicked(tab.value)" :class="{ active: tab.value === activeTab }"
                     class="btn btn-outline-light">{{ tab.text

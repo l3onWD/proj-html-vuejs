@@ -44,7 +44,7 @@ export default {
         <BaseNavTabs :tabList="[
             { value: 'featured', text: 'Featured' },
             { value: 'new', text: 'New Arrival' },
-            { value: 'best', text: 'Best Sellers' }]" @tab-changed="onProductsFilterChange" />
+            { value: 'best', text: 'Best Sellers' }]" @tab-changed="onProductsFilterChange" class="mb-4" />
 
 
         <!-- Product List -->

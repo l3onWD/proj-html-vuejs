@@ -32,7 +32,7 @@ export default {
         </header>
 
         <!-- Counter -->
-        <BaseDateCounter :date="new Date('2023-07-18').getTime()" />
+        <BaseDateCounter :date="new Date('2023-07-18').getTime()" class="mb-4" />
 
         <!-- Product Deals List -->
         <BaseCarousel :visible-slides="4">

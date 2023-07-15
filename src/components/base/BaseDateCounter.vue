@@ -54,7 +54,7 @@ export default {
 
 
 <template>
-    <ul class="d-flex justify-content-center py-4">
+    <ul class="d-flex justify-content-center">
         <li>{{ days }} days</li>
         <li>{{ hours }} hours</li>
         <li>{{ minutes }} mins</li>

@@ -27,6 +27,10 @@ export default {
 <template>
     <section class="container py-5">
 
+        <header>
+            <h3 class="text-center mb-5">Deal Of The Day</h3>
+        </header>
+
         <!-- Counter -->
         <BaseDateCounter :date="new Date('2023-07-18').getTime()" />
 

@@ -36,6 +36,10 @@ export default {
 <template>
     <section class="container py-5">
 
+        <header>
+            <h3 class="text-center mb-5">Our Products</h3>
+        </header>
+
         <!-- Filter -->
         <BaseNavTabs :tabList="[
             { value: 'featured', text: 'Featured' },

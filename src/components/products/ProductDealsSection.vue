@@ -35,7 +35,7 @@ export default {
         <BaseDateCounter :date="new Date('2023-07-18').getTime()" class="mb-4" />
 
         <!-- Product Deals List -->
-        <BaseCarousel :visible-slides="4" :totalSlides="store.productDeals.length">
+        <BaseCarousel :visible-slides="4" :totalSlides="store.productDeals.length" infinite :autoplay="3000">
             <div v-for="product in store.productDeals" :key="product.id" class="col">
                 <ProductCard v-bind="product" />
             </div>

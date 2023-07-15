@@ -49,8 +49,7 @@ export default {
 
 
         <!-- Product List -->
-        <BaseCarousel :visible-slides="4" :totalSlides="store.products.length" infinite :autoplay="5000"
-            ref="productCarousel">
+        <BaseCarousel :visible-slides="4" :totalSlides="store.products.length" infinite ref="productCarousel">
             <div v-for="product in store.products" :key="product.id" class="col">
                 <ProductCard v-bind="product" />
             </div>

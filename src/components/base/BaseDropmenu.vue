@@ -38,6 +38,7 @@ export default {
     position: relative;
 
     .dropmenu-toggler {
+        height: 100%;
 
         &.active {
             color: $col-yellow;

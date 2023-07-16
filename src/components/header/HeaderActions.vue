@@ -1,6 +1,18 @@
 <script>
-export default {
+/* -----------------------------------------
+* RESOURCES
+-------------------------------------------*/
+/*** COMPONENTS ***/
+import BaseDropmenu from '@/components/base/BaseDropmenu.vue';
 
+/*** DATA ***/
+import { store } from '@/data/store';
+
+
+export default {
+    components: { BaseDropmenu },
+
+    data: () => store
 
 }
 </script>
@@ -25,9 +37,25 @@ export default {
 
         <!-- Shopping Cart -->
         <li>
-            <button class="h-100 btn">
-                <FontAwesomeIcon icon="fas fa-bag-shopping" /><span class="ms-2 text-yellow">(0) €0.00</span>
-            </button>
+            <BaseDropmenu text="Cart" position="left" class="h-100">
+
+                <template #toggler>
+                    <button class="h-100 btn">
+                        <FontAwesomeIcon icon="fas fa-bag-shopping" /><span class="ms-2 text-yellow">({{ cart.length }})
+                            €0.00</span>
+                    </button>
+                </template>
+
+                <template #content>
+                    <ul v-if="cart.length" class="px-2">
+                        <li v-for="item in cart" :key="item">{{ item }}</li>
+                    </ul>
+
+                    <div v-else class="px-2">
+                        <p class="text-gray mb-0">Add products to cart.</p>
+                    </div>
+                </template>
+            </BaseDropmenu>
         </li>
     </ul>
 </template>

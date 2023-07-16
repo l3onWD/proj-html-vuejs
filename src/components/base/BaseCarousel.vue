@@ -4,14 +4,19 @@ export default {
     data() {
         return {
             index: 0,
-            autoplayId: null
+            autoplayId: null,
+            totalVisibleItems: null,
+            mediaQueries: []
         };
     },
 
     props: {
+        // Required
+        responsive: Object,
+        totalItems: Number,
+
+        // Optional
         navDots: Boolean,
-        visibleSlides: Number,
-        totalSlides: Number,
         infinite: Boolean,
         autoplay: Number
     },
@@ -20,17 +25,22 @@ export default {
 
         // Get row cols based in visible slides (max 6)
         carouselCols() {
-            return `row-cols-${this.visibleSlides}`;
+            let responsiveRows = [];
+            for (const breakpoint in this.responsive) {
+                if (breakpoint === 'xs') responsiveRows.push(`row-cols-${this.responsive[breakpoint]}`);
+                else responsiveRows.push(`row-cols-${breakpoint}-${this.responsive[breakpoint]}`);
+            }
+            return responsiveRows;
         },
 
         // Get max index based on visible slides
         maxIndex() {
-            return Math.max(this.totalSlides - (this.visibleSlides), 0);
+            return Math.max(this.totalItems - (this.totalVisibleItems), 0);
         },
 
         // Create css property for sliding
         left() {
-            return `left: calc(100% / ${this.visibleSlides} * -${this.index} );`
+            return `left: calc(100% / ${this.totalVisibleItems} * -${this.index} );`
         }
     },
 
@@ -60,12 +70,61 @@ export default {
         stopAutoplay() {
             if (!this.autoplay) return;
             clearInterval(this.autoplayId);
+        },
+
+        handleResponsive() {
+
+            this.setIndex(0);
+
+            // Update totalVisibleItems by matching queries
+            this.mediaQueries.forEach(({ mediaQuery, items }) => {
+                if (mediaQuery.matches) this.totalVisibleItems = items;
+            });;
+
         }
     },
 
     created() {
+        // Breakpoints (for query listener)
+        const breakpoints = [
+            { name: 'xs', width: 0 },
+            { name: 'sm', width: 576 },
+            { name: 'md', width: 768 },
+            { name: 'lg', width: 992 },
+            { name: 'xl', width: 1200 },
+            { name: 'xxl', width: 1400 }
+        ];
+
+
+        // Set Media Query Listener
+        for (const breakpoint in this.responsive) {
+
+            const width = breakpoints.find(bp => bp.name === breakpoint).width;
+
+            this.mediaQueries.push({
+                mediaQuery: window.matchMedia(`(min-width: ${width}px)`),
+                items: this.responsive[breakpoint]
+            });
+
+            this.mediaQueries[this.mediaQueries.length - 1].mediaQuery.addEventListener('change', this.handleResponsive);
+        }
+
+
+        // Set initial visible items
+        this.handleResponsive();
+
+
+        // Set autoplay (if checked)
         this.startAutoplay();
+    },
+
+    unmounted() {
+        // Remove Media Query Listener
+        this.mediaQueries.forEach(({ mediaQuery }) => {
+            mediaQuery.removeEventListener('change', this.handleResponsive);
+        });
     }
+
 
 }
 </script>
@@ -93,8 +152,7 @@ export default {
 
         <!-- Nav Dots -->
         <div v-else class="nav-dots">
-            <button @click="setIndex(n - 1)" v-for="n in totalSlides" :key="n"
-                :class="{ 'text-yellow': index === (n - 1) }">
+            <button @click="setIndex(n - 1)" v-for="n in totalItems" :key="n" :class="{ 'text-yellow': index === (n - 1) }">
                 <FontAwesomeIcon icon="fas fa-circle" />
             </button>
         </div>

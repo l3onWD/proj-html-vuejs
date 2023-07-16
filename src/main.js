@@ -10,6 +10,7 @@ import { faFacebookF, faTwitter, faGooglePlusG, faSkype, faInstagram } from '@fo
 
 library.add(faSearch, faUser, faBagShopping, faAngleDown, faStar, faCalendarDays, faComments, faTruck, faSackDollar, faPercent, faHandHoldingDollar, faCircleChevronLeft, faCircleChevronRight, faCircle, faHeart, faMaximize, faEye, faQuoteLeft, faPlus, faLink, faLocationDot, faPhone, faEnvelope, faPaperPlane, faFacebookF, faTwitter, faGooglePlusG, faSkype, faInstagram);
 
+
 createApp(App)
     .component('FontAwesomeIcon', FontAwesomeIcon)
     .mount('#app');

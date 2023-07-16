@@ -29,7 +29,7 @@ export default {
             <h3 class="text-center mb-5">New Game Blogs</h3>
         </header>
 
-        <BaseCarousel :responsive="{ 'xs': 1, 'sm': 2, 'lg': 3 }" :total-items="store.blogs.length">
+        <BaseCarousel :responsive="{ 'xs': 1, 'sm': 2, 'lg': 3 }" :total-items="store.blogs.length" infinite>
             <div v-for="blog in store.blogs" :key="blog.id" class="col">
                 <BlogCard v-bind="blog" />
             </div>

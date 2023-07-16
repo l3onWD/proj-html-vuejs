@@ -43,11 +43,21 @@ export default {
 
                             <li>
                                 <BaseDropmenu text="Need Help?">
-                                    <ul>
-                                        <li v-for="link in contactLinks" :key="link.text">
-                                            <a :href="link.url">{{ link.text }}</a>
-                                        </li>
-                                    </ul>
+
+                                    <template #toggler>
+                                        <a href="#">
+                                            Need Help?
+                                            <FontAwesomeIcon icon="fas fa-angle-down" />
+                                        </a>
+                                    </template>
+
+                                    <template #content>
+                                        <ul>
+                                            <li v-for="link in contactLinks" :key="link.text">
+                                                <a :href="link.url">{{ link.text }}</a>
+                                            </li>
+                                        </ul>
+                                    </template>
                                 </BaseDropmenu>
                             </li>
 

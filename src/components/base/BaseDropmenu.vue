@@ -6,24 +6,24 @@ export default {
         };
     },
     props: {
-        text: String
+        text: String,
+        position: String
     }
 }
 </script>
 
 
 <template>
-    <div class="dropmenu">
+    <div class="dropmenu" :class="position">
 
         <!-- Toggler -->
-        <button @click="isActive = !isActive" :class="{ active: isActive }">
-            {{ text }}
-            <FontAwesomeIcon icon="fas fa-angle-down" />
-        </button>
+        <div @click="isActive = !isActive" class="dropmenu-toggler" :class="{ active: isActive }">
+            <slot name="toggler"></slot>
+        </div>
 
         <!-- Menu content -->
         <div v-show="isActive" class="dropmenu-content">
-            <slot></slot>
+            <slot name="content"></slot>
         </div>
 
     </div>
@@ -37,8 +37,7 @@ export default {
 .dropmenu {
     position: relative;
 
-    button {
-        padding: 0.5rem 1.5rem;
+    .dropmenu-toggler {
 
         &.active {
             color: $col-yellow;
@@ -57,6 +56,13 @@ export default {
 
         box-shadow: 0 0 8px 2px rgba($color: #000, $alpha: 0.2);
         z-index: 1;
+    }
+}
+
+.dropmenu.left {
+    .dropmenu-content {
+        left: auto;
+        right: 0;
     }
 }
 </style>

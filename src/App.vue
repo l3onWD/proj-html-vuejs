@@ -8,8 +8,8 @@ import PageMain from './components/PageMain.vue';
 import PageFooter from './components/PageFooter.vue';
 
 /*** DATA ***/
-import { productList, blogList } from './data/';
 import { store } from './data/store';
+import axios from 'axios';
 
 
 export default {
@@ -21,39 +21,54 @@ export default {
         * FETCHING
         */
 
-        fetchProducts(endpoint) {
+        fetchProducts(filter) {
 
-            switch (endpoint) {
+            const options = {
+                params: {}
+            };
+
+            switch (filter) {
                 case '':
-                    store.products = productList;
                     break;
 
                 case 'featured':
-                    store.products = productList.filter(({ featured }) => featured);
+                    options.params = { featured: true }
                     break;
 
                 case 'new':
-                    const newProducts = [...productList];
-                    store.products = newProducts.sort((a, b) => b.created - a.created).slice(0, 6);
+                    options.params = {
+                        _sort: 'created',
+                        _order: 'desc'
+                    }
                     break;
 
                 case 'best':
-                    const bestProducts = [...productList];
-                    store.products = bestProducts.sort((a, b) => b.totalSell - a.totalSell).slice(0, 6);
+                    options.params = {
+                        _sort: 'totalSell',
+                        _order: 'desc'
+                    }
                     break;
 
                 case 'deals':
-                    store.productDeals = productList.filter(({ deal }) => deal);;
+                    options.params = { deal: true }
                     break;
 
                 default:
                     console.error(`#400 - Bad Request: ${endpoint} endpoint doesnt exist.`);
             }
 
+            axios.get(`http://localhost:3000/products`, options)
+                .then(({ data }) => {
+                    store.products = data;
+                });
+
         },
 
         fetchBlogs() {
-            store.blogs = blogList;
+            axios.get(`http://localhost:3000/blogs`)
+                .then(({ data }) => {
+                    store.blogs = data;
+                });
         },
 
 

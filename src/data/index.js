@@ -1,8 +1,3 @@
-/*** DATABASE ***/
-import productList from './db/products/_productList';
-import blogList from './db/blog/_blogList';
-
-
 /*** CONSTANTS ***/
 import headerMenuLinks from './_headerMenuLinks';
 import contactLinks from './_contactLinks';
@@ -12,4 +7,4 @@ import socialLinks from './_socialLinks';
 import ctaList from './_ctaList';
 
 
-export { headerMenuLinks, contactLinks, productList, blogList, testimonialList, footerMenues, socialLinks, ctaList };
+export { headerMenuLinks, contactLinks, testimonialList, footerMenues, socialLinks, ctaList };

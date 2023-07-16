@@ -6,8 +6,7 @@ export default {
         };
     },
     props: {
-        text: String,
-        links: Array
+        text: String
     }
 }
 </script>
@@ -23,11 +22,9 @@ export default {
         </button>
 
         <!-- Menu content -->
-        <ul v-if="isActive">
-            <li v-for="link in links" :key="link.text">
-                <a :href="link.url">{{ link.text }}</a>
-            </li>
-        </ul>
+        <div v-show="isActive" class="dropmenu-content">
+            <slot></slot>
+        </div>
 
     </div>
 </template>
@@ -48,7 +45,7 @@ export default {
         }
     }
 
-    ul {
+    .dropmenu-content {
         padding: 0.75rem 0;
         position: absolute;
         top: 100%;
@@ -60,12 +57,6 @@ export default {
 
         box-shadow: 0 0 8px 2px rgba($color: #000, $alpha: 0.2);
         z-index: 1;
-
-        a {
-            padding: 0.25rem 1rem;
-
-            display: block;
-        }
     }
 }
 </style>

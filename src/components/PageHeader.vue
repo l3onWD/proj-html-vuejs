@@ -42,7 +42,13 @@ export default {
                             </li>
 
                             <li>
-                                <BaseDropmenu :links="contactLinks" text="Need Help?" />
+                                <BaseDropmenu text="Need Help?">
+                                    <ul>
+                                        <li v-for="link in contactLinks" :key="link.text">
+                                            <a :href="link.url">{{ link.text }}</a>
+                                        </li>
+                                    </ul>
+                                </BaseDropmenu>
                             </li>
 
                         </ul>

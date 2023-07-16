@@ -4,13 +4,14 @@
 -------------------------------------------*/
 /*** COMPONENTS ***/
 import BlogCard from '@/components/blog/BlogCard.vue';
+import BaseCarousel from '@/components/base/BaseCarousel.vue';
 
 /*** DATA ***/
 import { store } from '@/data/store';
 
 
 export default {
-    components: { BlogCard },
+    components: { BlogCard, BaseCarousel },
 
     data() {
         return {
@@ -28,10 +29,11 @@ export default {
             <h3 class="text-center mb-5">New Game Blogs</h3>
         </header>
 
-        <div class="row row-cols-3">
+        <BaseCarousel :responsive="{ 'xs': 1, 'sm': 2, 'lg': 3 }" :total-items="store.blogs.length">
             <div v-for="blog in store.blogs" :key="blog.id" class="col">
                 <BlogCard v-bind="blog" />
             </div>
-        </div>
+        </BaseCarousel>
+
     </section>
 </template>

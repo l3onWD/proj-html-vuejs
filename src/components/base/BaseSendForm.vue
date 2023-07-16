@@ -28,6 +28,7 @@ form {
     input {
         padding-right: 40px;
         width: 100%;
+        min-width: 200px;
     }
 
     button {

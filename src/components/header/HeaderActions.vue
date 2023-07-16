@@ -30,9 +30,26 @@ export default {
 
         <!-- User Account -->
         <li>
-            <button class="h-100 btn">
-                <FontAwesomeIcon icon="fas fa-user" />
-            </button>
+            <BaseDropmenu text="Cart" position="left" class="h-100">
+
+                <template #toggler>
+                    <button class="h-100 btn">
+                        <FontAwesomeIcon icon="fas fa-user" />
+                    </button>
+                </template>
+
+                <template #content>
+                    <ul class="text-gray px-2">
+                        <li>
+                            <a href="#" class="d-block p-2">Login</a>
+                        </li>
+                        <li>
+                            <a href="#" class="d-block p-2">Create Account</a>
+                        </li>
+                    </ul>
+
+                </template>
+            </BaseDropmenu>
         </li>
 
         <!-- Shopping Cart -->

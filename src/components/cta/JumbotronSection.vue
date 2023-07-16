@@ -17,7 +17,7 @@ export default {
 <template>
     <section>
 
-        <BaseCarousel :visible-slides="1" :totalSlides="2" nav-dots infinite :autoplay="5000">
+        <BaseCarousel :responsive="{ 'xs': 1 }" :total-items="2" nav-dots infinite :autoplay="5000">
 
             <CtaCard imgFile="main-banner-01.jpg" imgTitle="Jumbotron 01" class="col">
 

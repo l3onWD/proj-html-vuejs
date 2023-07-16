@@ -27,7 +27,7 @@ export default {
     <section class="container-fluid py-5 text-center">
 
         <!-- Product Deals List -->
-        <BaseCarousel :visible-slides="1" :totalSlides="testimonials.length" nav-dots>
+        <BaseCarousel :responsive="{ 'xs': 1 }" :total-items="testimonials.length" nav-dots>
             <div v-for="testimonial in testimonials" :key="testimonial.name" class="col">
                 <TestimonialCard v-bind="testimonial" />
             </div>

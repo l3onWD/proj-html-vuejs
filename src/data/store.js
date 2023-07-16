@@ -4,5 +4,6 @@ export const store = reactive({
     products: [],
     productDeals: [],
     productsFilter: 'featured',
-    blogs: []
+    blogs: [],
+    cart: []
 });

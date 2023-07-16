@@ -1,4 +1,11 @@
 <script>
+/* -----------------------------------------
+* RESOURCES
+-------------------------------------------*/
+/*** DATA ***/
+import { store } from '@/data/store';
+
+
 export default {
     data() {
         return {
@@ -48,6 +55,12 @@ export default {
             const priceFormat = (this.priceOld / 100).toFixed(2)
             return `€${priceFormat}`;
         }
+    },
+
+    methods: {
+        addToCart() {
+            store.cart.push(this.id)
+        }
     }
 
 }
@@ -90,7 +103,7 @@ export default {
             <!-- Actions -->
             <ul class="product-actions">
                 <li>
-                    <button class="btn w-100">
+                    <button @click="addToCart" class="btn w-100">
                         <FontAwesomeIcon icon="fas fa-shopping-bag" />
                     </button>
                 </li>

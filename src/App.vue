@@ -6,6 +6,7 @@
 import PageHeader from './components/PageHeader.vue';
 import PageMain from './components/PageMain.vue';
 import PageFooter from './components/PageFooter.vue';
+import BaseLoader from './components/base/BaseLoader.vue';
 
 /*** DATA ***/
 import { store } from './data/store';
@@ -13,7 +14,13 @@ import axios from 'axios';
 
 
 export default {
-    components: { PageHeader, PageMain, PageFooter },
+    components: { PageHeader, PageMain, PageFooter, BaseLoader },
+
+    data() {
+        return {
+            loader: 0
+        };
+    },
 
     methods: {
 
@@ -28,9 +35,6 @@ export default {
             };
 
             switch (filter) {
-                case '':
-                    break;
-
                 case 'featured':
                     options.params = { featured: true }
                     break;
@@ -52,22 +56,32 @@ export default {
                 case 'deals':
                     options.params = { deal: true }
                     break;
-
-                default:
-                    console.error(`#400 - Bad Request: ${endpoint} endpoint doesnt exist.`);
             }
 
+            this.loader++;
             axios.get(`http://localhost:3000/products`, options)
                 .then(({ data }) => {
                     store.products = data;
+                }).catch(err => {
+                    console.error(err);
+                })
+                .then(() => {
+                    this.loader--;
                 });
 
         },
 
         fetchBlogs() {
+
+            this.loader++;
             axios.get(`http://localhost:3000/blogs`)
                 .then(({ data }) => {
                     store.blogs = data;
+                }).catch(err => {
+                    console.error(err);
+                })
+                .then(() => {
+                    this.loader--;
                 });
         },
 
@@ -100,6 +114,8 @@ export default {
     <PageMain @products-filter-changed="searchProducts" />
 
     <PageFooter />
+
+    <BaseLoader v-if="loader" />
 </template>
 
 

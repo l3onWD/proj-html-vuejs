@@ -14,6 +14,12 @@ export default {
 
 
 <style scoped>
+a {
+    padding: 1.5rem 0;
+
+    display: block;
+}
+
 img {
     height: 25px;
 }

@@ -5,16 +5,23 @@ export default {
             isActive: false
         };
     },
+
     props: {
         text: String,
         position: String
+    },
+
+    methods: {
+        hideDropmenu() {
+            this.isActive = false;
+        }
     }
 }
 </script>
 
 
 <template>
-    <div class="dropmenu" :class="position">
+    <div class="dropmenu" :class="position" v-click-outside="hideDropmenu">
 
         <!-- Toggler -->
         <div @click="isActive = !isActive" class="dropmenu-toggler" :class="{ active: isActive }">

@@ -53,15 +53,14 @@ export default {
 
     background-color: $col-dark;
     visibility: hidden;
-    opacity: 0;
 
     z-index: 1;
+    transition: visibility 0.2s, left 0.2s;
 
     &.show {
         left: 0;
 
         visibility: visible;
-        opacity: 1;
     }
 
     a {

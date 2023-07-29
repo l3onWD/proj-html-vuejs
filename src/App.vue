@@ -7,6 +7,7 @@ import PageHeader from './components/PageHeader.vue';
 import PageMain from './components/PageMain.vue';
 import PageFooter from './components/PageFooter.vue';
 import BaseLoader from './components/base/BaseLoader.vue';
+import TheScrollTopButton from './components/base/TheScrollTopButton.vue';
 
 /*** DATA ***/
 import { store } from './data/store';
@@ -14,7 +15,7 @@ import axios from 'axios';
 
 
 export default {
-    components: { PageHeader, PageMain, PageFooter, BaseLoader },
+    components: { PageHeader, PageMain, PageFooter, BaseLoader, TheScrollTopButton },
 
     data() {
         return {
@@ -114,6 +115,8 @@ export default {
     <PageMain @products-filter-changed="searchProducts" />
 
     <PageFooter />
+
+    <TheScrollTopButton />
 
     <BaseLoader v-if="loader" />
 </template>

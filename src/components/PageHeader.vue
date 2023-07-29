@@ -107,7 +107,13 @@ export default {
 
 
 header {
+    position: sticky;
+    top: -50px;
+
     background-color: $col-dark;
+
+    box-shadow: 0 0 8px 2px rgba($color: #000, $alpha: 0.2);
+    z-index: 1;
 }
 
 .header-top {

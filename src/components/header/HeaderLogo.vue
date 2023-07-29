@@ -15,6 +15,16 @@ export default {
 
 <style scoped>
 img {
-    height: 33px;
+    height: 25px;
+}
+
+/* -----------------------------------------
+* RESPONSIVE
+-------------------------------------------*/
+/*** MEDIA SM ***/
+@media screen and (min-width: 576px) {
+    img {
+        height: 33px;
+    }
 }
 </style>

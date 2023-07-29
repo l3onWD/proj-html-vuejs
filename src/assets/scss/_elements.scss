@@ -84,3 +84,14 @@
         border-left: 0.5em solid transparent;
     }
 }
+
+
+/*** OVERLAY ***/
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    background-color: rgba($color: #000, $alpha: 0.8);
+
+    z-index: 1;
+}

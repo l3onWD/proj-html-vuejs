@@ -31,7 +31,7 @@ export default {
         <nav>
             <!-- Header Top -->
             <div class="header-top">
-                <ul class="container d-flex justify-content-between align-items-center py-2">
+                <ul class="container d-flex justify-content-center justify-content-sm-between align-items-center py-2">
 
                     <!-- Left Panel -->
                     <li>
@@ -67,7 +67,7 @@ export default {
 
                     <!-- Right Panel -->
                     <li>
-                        <a href="#" class="pe-0">Call 24/7 . 800-8754-987</a>
+                        <a href="#" class="d-none d-sm-inline pe-0">Call 24/7 . 800-8754-987</a>
                     </li>
 
                 </ul>
@@ -77,7 +77,14 @@ export default {
             <!-- Header Bottom -->
             <div class="container header-bottom">
 
-                <ul class="row align-items-center">
+                <ul class="row gx-3 align-items-center">
+
+                    <li class="col-auto">
+                        <button class="btn d-lg-none p-2">
+                            <FontAwesomeIcon icon="fas fa-bars" size="2x" />
+                        </button>
+                    </li>
+
                     <!-- Logo -->
                     <li class="col-auto">
                         <HeaderLogo />

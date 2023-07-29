@@ -62,7 +62,8 @@ export default {
             this.loader++;
             axios.get(`http://localhost:3000/products`, options)
                 .then(({ data }) => {
-                    store.products = data;
+                    if (filter === 'deals') store.productDeals = data;
+                    else store.products = data;
                 }).catch(err => {
                     console.error(err);
                 })

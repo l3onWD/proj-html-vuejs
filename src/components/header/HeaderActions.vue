@@ -70,8 +70,8 @@ export default {
 
                 <template #toggler>
                     <button class="h-100 btn">
-                        <FontAwesomeIcon icon="fas fa-bag-shopping" /><span class="ms-2 text-yellow">({{ cart.length }})
-                            €0.00</span>
+                        <FontAwesomeIcon icon="fas fa-bag-shopping" />
+                        <span class="d-none d-sm-inline ms-2 text-yellow">({{ cart.length }})€0.00</span>
                     </button>
                 </template>
 

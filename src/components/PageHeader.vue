@@ -17,7 +17,8 @@ export default {
 
     data() {
         return {
-            contactLinks: contactLinks
+            contactLinks: contactLinks,
+            showMobileMenu: false
         };
     }
 
@@ -80,7 +81,7 @@ export default {
                 <ul class="row gx-3 align-items-center">
 
                     <li class="col-auto">
-                        <button class="btn d-lg-none p-2">
+                        <button @click="showMobileMenu = !showMobileMenu" class="btn d-lg-none p-2">
                             <FontAwesomeIcon icon="fas fa-bars" size="2x" />
                         </button>
                     </li>
@@ -92,7 +93,9 @@ export default {
 
                     <!-- Menu -->
                     <li class="col">
-                        <HeaderMenu />
+                        <div v-if="showMobileMenu" @click="showMobileMenu = !showMobileMenu" class="overlay d-lg-none">
+                        </div>
+                        <HeaderMenu :show-mobile-menu="showMobileMenu" />
                     </li>
 
                     <!-- Actions -->

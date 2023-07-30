@@ -35,7 +35,7 @@ export default {
 <template>
     <section class="container py-5">
 
-        <div class="row row-cols-2">
+        <div class="row g-4 row-cols-1 row-cols-md-2">
 
             <div v-for="cta in filterdCta" :key="cta.title" class="col">
                 <CtaCard :imgFile="cta.imgFile" :imgTitle="cta.title">
@@ -43,7 +43,7 @@ export default {
                         <h5 class="tag">
                             <span>{{ cta.tag }}</span>
                         </h5>
-                        <h3>{{ cta.title }}</h3>
+                        <h4>{{ cta.title }}</h4>
                     </div>
                 </CtaCard>
             </div>
@@ -52,3 +52,15 @@ export default {
 
     </section>
 </template>
+
+<style scoped>
+/* -----------------------------------------
+* RESPONSIVE
+-------------------------------------------*/
+/*** MEDIA LG ***/
+@media screen and (min-width: 992px) {
+    h4 {
+        font-size: 2rem;
+    }
+}
+</style>

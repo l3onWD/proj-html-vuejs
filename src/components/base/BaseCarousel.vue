@@ -192,15 +192,12 @@ export default {
     }
 
     .nav-dots {
-        padding: 1rem;
         position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
 
         text-align: center;
-
-        pointer-events: none;
 
         &>button {
             padding: 0.25rem;

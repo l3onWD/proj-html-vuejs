@@ -8,8 +8,8 @@ export default {
 
 
 <template>
-    <nav class="social-bar py-2">
-        <ul>
+    <nav class="social-bar">
+        <ul class="d-flex justify-content-center justify-content-lg-start">
             <li v-for="social in socials" :key="social.link">
                 <a :href="social.link">
                     <i>
@@ -25,12 +25,12 @@ export default {
 <style lang="scss" scoped>
 nav {
     ul {
-        display: flex;
 
         a {
             padding: 0.5rem;
 
             display: block;
+            font-size: 1.3rem;
 
             i {
                 width: 24px;

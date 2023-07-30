@@ -200,6 +200,8 @@ export default {
 
         text-align: center;
 
+        pointer-events: none;
+
         &>button {
             padding: 0.25rem;
         }

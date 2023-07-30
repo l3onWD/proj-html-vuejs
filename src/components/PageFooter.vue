@@ -100,7 +100,6 @@ footer {
 
     background-image: url('@/assets/img/footer-bg.png');
     background-position: top center;
-    background-size: cover;
 
     .footer-top {
         padding-top: 6rem;

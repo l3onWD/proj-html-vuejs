@@ -31,7 +31,7 @@ export default {
         <!-- Footer Top -->
         <div class="container footer-top">
 
-            <div class="row row-cols-1 row-cols-lg-4">
+            <div class="row g-3 row-cols-1 row-cols-lg-4">
 
                 <!-- Menues -->
                 <div v-for="menu in menues" :key="menu.title" class="col">

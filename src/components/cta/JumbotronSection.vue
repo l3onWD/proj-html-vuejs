@@ -23,11 +23,11 @@ export default {
 
                 <div class="container">
 
-                    <h3 class="tag mb-3">
+                    <h5 class="tag mb-3">
                         <span>Upcoming</span>
-                    </h3>
+                    </h5>
 
-                    <h2 class="mb-5">Jumbotron 01</h2>
+                    <h3 class="mb-4 mb-md-5">Jumbotron 01</h3>
 
                     <button class="btn btn-light">Shop Now</button>
                 </div>
@@ -38,11 +38,11 @@ export default {
 
                 <div class="container">
 
-                    <h3 class="tag mb-3">
+                    <h5 class="tag mb-3">
                         <span>Upcoming</span>
-                    </h3>
+                    </h5>
 
-                    <h2 class="mb-5">Jumbotron 02</h2>
+                    <h3 class="mb-4 mb-md-5">Jumbotron 02</h3>
 
                     <button class="btn btn-light">Shop Now</button>
                 </div>
@@ -52,3 +52,27 @@ export default {
         </BaseCarousel>
     </section>
 </template>
+
+<style scoped>
+section>* {
+    height: 400px;
+}
+
+/* -----------------------------------------
+* RESPONSIVE
+-------------------------------------------*/
+/*** MEDIA MD ***/
+@media screen and (min-width: 768px) {
+    section>* {
+        height: 500px;
+    }
+
+    h5 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 3.5rem;
+    }
+}
+</style>

@@ -171,6 +171,7 @@ export default {
 
     .carousel-items {
         position: relative;
+        height: 100%;
 
         display: flex;
 

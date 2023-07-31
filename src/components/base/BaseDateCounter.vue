@@ -54,7 +54,7 @@ export default {
 
 
 <template>
-    <ul class="d-flex justify-content-center">
+    <ul class="d-flex justify-content-center text-center">
         <li>{{ days }} days</li>
         <li>{{ hours }} hours</li>
         <li>{{ minutes }} mins</li>
@@ -68,8 +68,19 @@ export default {
 
 
 li {
-    padding: 0.75rem 2rem;
+    padding: 0.5rem 1.5rem;
 
     border: 1px solid $col-darkgray;
+}
+
+
+/* -----------------------------------------
+* RESPONSIVE
+-------------------------------------------*/
+/*** MEDIA SM ***/
+@media screen and (min-width: 576px) {
+    li {
+        padding: 0.75rem 2rem;
+    }
 }
 </style>

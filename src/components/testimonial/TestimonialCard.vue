@@ -21,7 +21,7 @@ export default {
 
 
 <template>
-    <div class="testimonial-card w-50 mx-auto py-5">
+    <div class="testimonial-card mx-auto py-5">
 
         <!-- Image -->
         <div class="testimonial-image mb-4 mx-auto">
@@ -45,6 +45,7 @@ export default {
 
 
 .testimonial-card {
+    width: 80%;
 
     .testimonial-image {
         width: 100px;
@@ -64,6 +65,17 @@ export default {
             top: 5px;
             left: 5px;
         }
+    }
+}
+
+
+/* -----------------------------------------
+* RESPONSIVE
+-------------------------------------------*/
+/*** MEDIA MD ***/
+@media screen and (min-width: 768px) {
+    .testimonial-card {
+        width: 50%;
     }
 }
 </style>

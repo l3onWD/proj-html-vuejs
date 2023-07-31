@@ -20,7 +20,7 @@ export default {
             <h3 class="text-center mb-5">Special Category</h3>
         </header>
 
-        <div class="row row-cols-3">
+        <div class="row row-cols-2 row-cols-md-3 g-3">
             <div class="col">
                 <CategoryCard imgFile="category-image-01-446x550_t.jpg" name="Batman" />
             </div>

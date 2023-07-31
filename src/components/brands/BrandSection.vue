@@ -1,6 +1,13 @@
 <script>
-export default {
+/* -----------------------------------------
+* RESOURCES
+-------------------------------------------*/
+/*** COMPONENTS ***/
+import BaseCarousel from '@/components/base/BaseCarousel.vue';
 
+
+export default {
+    components: { BaseCarousel }
 
 }
 </script>
@@ -9,8 +16,8 @@ export default {
 <template>
     <section class="container py-5">
 
-        <div class="row row-cols-5">
-
+        <!-- Product Deals List -->
+        <BaseCarousel :responsive="{ 'xs': 2, 'sm': 3, 'md': 4, 'lg': 5 }" :total-items="5" infinite :autoplay="3000">
             <div class="col">
                 <div class="px-3">
                     <img src="../../assets/img/brands/brand-01.png" alt="Brand 01" class="img-fluid">
@@ -40,8 +47,7 @@ export default {
                     <img src="../../assets/img/brands/brand-05.png" alt="Brand 05" class="img-fluid">
                 </div>
             </div>
-
-        </div>
+        </BaseCarousel>
 
     </section>
 </template>

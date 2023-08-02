@@ -28,7 +28,7 @@ export default {
 
         <!-- Product Deals List -->
         <BaseCarousel :responsive="{ 'xs': 1 }" :total-items="testimonials.length" nav-dots>
-            <div v-for="testimonial in testimonials" :key="testimonial.name" class="col">
+            <div v-for="testimonial in testimonials" :key="testimonial.name">
                 <TestimonialCard v-bind="testimonial" />
             </div>
         </BaseCarousel>

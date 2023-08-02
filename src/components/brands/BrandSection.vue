@@ -18,31 +18,31 @@ export default {
 
         <!-- Product Deals List -->
         <BaseCarousel :responsive="{ 'xs': 2, 'sm': 3, 'md': 4, 'lg': 5 }" :total-items="5" infinite :autoplay="3000">
-            <div class="col">
+            <div>
                 <div class="px-3">
                     <img src="../../assets/img/brands/brand-01.png" alt="Brand 01" class="img-fluid">
                 </div>
             </div>
 
-            <div class="col">
+            <div>
                 <div class="px-3">
                     <img src="../../assets/img/brands/brand-02.png" alt="Brand 02" class="img-fluid">
                 </div>
             </div>
 
-            <div class="col">
+            <div>
                 <div class="px-3">
                     <img src="../../assets/img/brands/brand-03.png" alt="Brand 03" class="img-fluid">
                 </div>
             </div>
 
-            <div class="col">
+            <div>
                 <div class="px-3">
                     <img src="../../assets/img/brands/brand-04.png" alt="Brand 04" class="img-fluid">
                 </div>
             </div>
 
-            <div class="col">
+            <div>
                 <div class="px-3">
                     <img src="../../assets/img/brands/brand-05.png" alt="Brand 05" class="img-fluid">
                 </div>

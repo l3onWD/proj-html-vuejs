@@ -19,7 +19,7 @@ export default {
 
         <BaseCarousel :responsive="{ 'xs': 1 }" :total-items="2" nav-dots infinite :autoplay="5000">
 
-            <CtaCard imgFile="main-banner-01.jpg" imgTitle="Jumbotron 01" class="col">
+            <CtaCard imgFile="main-banner-01.jpg" imgTitle="Jumbotron 01">
 
                 <div class="container">
 
@@ -34,7 +34,7 @@ export default {
 
             </CtaCard>
 
-            <CtaCard imgFile="main-banner-02.jpg" imgTitle="Jumbotron 02" class="col">
+            <CtaCard imgFile="main-banner-02.jpg" imgTitle="Jumbotron 02">
 
                 <div class="container">
 

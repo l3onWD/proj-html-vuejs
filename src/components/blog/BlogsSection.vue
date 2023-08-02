@@ -30,7 +30,7 @@ export default {
         </header>
 
         <BaseCarousel :responsive="{ 'xs': 1, 'sm': 2, 'lg': 3 }" :total-items="store.blogs.length" infinite>
-            <div v-for="blog in store.blogs" :key="blog.id" class="col">
+            <div v-for="blog in store.blogs" :key="blog.id">
                 <BlogCard v-bind="blog" />
             </div>
         </BaseCarousel>

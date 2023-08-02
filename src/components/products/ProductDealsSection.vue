@@ -37,7 +37,7 @@ export default {
         <!-- Product Deals List -->
         <BaseCarousel :responsive="{ 'xs': 2, 'sm': 3, 'lg': 4 }" :total-items="store.productDeals.length" infinite
             :autoplay="3000">
-            <div v-for="product in store.productDeals" :key="product.id" class="col">
+            <div v-for="product in store.productDeals" :key="product.id">
                 <ProductCard v-bind="product" />
             </div>
         </BaseCarousel>

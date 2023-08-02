@@ -23,12 +23,12 @@ export default {
 
     computed: {
 
-        // Get row cols based in visible slides (max 6)
+        // Get items cols based on visible slides (max 6)
         carouselCols() {
             let responsiveRows = [];
             for (const breakpoint in this.responsive) {
-                if (breakpoint === 'xs') responsiveRows.push(`row-cols-${this.responsive[breakpoint]}`);
-                else responsiveRows.push(`row-cols-${breakpoint}-${this.responsive[breakpoint]}`);
+                if (breakpoint === 'xs') responsiveRows.push(`items-${this.responsive[breakpoint]}`);
+                else responsiveRows.push(`items-${breakpoint}-${this.responsive[breakpoint]}`);
             }
             return responsiveRows;
         },
@@ -40,7 +40,7 @@ export default {
 
         // Create css property for sliding
         left() {
-            return `left: calc(100% / ${this.totalVisibleItems} * -${this.index} );`
+            return `calc(100% / ${this.totalVisibleItems} * -${this.index} )`
         }
     },
 
@@ -134,12 +134,12 @@ export default {
     <div class="carousel" @mouseenter="stopAutoplay" @mouseleave="startAutoplay">
 
         <!-- Slides Container -->
-        <div class="carousel-items row flex-nowrap g-0" :class="carouselCols" :style="left">
+        <div class="carousel-items" :class="carouselCols">
             <slot></slot>
         </div>
 
         <!-- Nav Arrows -->
-        <div v-if="!navDots">
+        <div v-if="!navDots && totalItems > totalVisibleItems">
 
             <button v-show="infinite || index" @click="slideTo('prev')" class="nav-arrow nav-prev">
                 <FontAwesomeIcon icon="fas fa-circle-chevron-left" size="2xl" />
@@ -151,7 +151,7 @@ export default {
         </div>
 
         <!-- Nav Dots -->
-        <div v-else class="nav-dots">
+        <div v-else-if="navDots && totalItems > totalVisibleItems" class="nav-dots">
             <button @click="setIndex(n - 1)" v-for="n in totalItems" :key="n" :class="{ 'text-yellow': index === (n - 1) }">
                 <FontAwesomeIcon icon="fas fa-circle" />
             </button>
@@ -169,15 +169,30 @@ export default {
 
     overflow: hidden;
 
+
+    /* Items */
     .carousel-items {
         position: relative;
         height: 100%;
+        left: v-bind('left');
 
         display: flex;
 
         transition: left 0.2s;
     }
 
+    .carousel-items>:deep(*) {
+        flex: 0 0 100%;
+    }
+
+    @for $i from 2 through 6 {
+        .carousel-items.items-#{$i}>:deep(*) {
+            flex-basis: calc(100% / $i);
+        }
+    }
+
+
+    /* Nav */
     .nav-arrow {
         position: absolute;
         top: 50%;
@@ -202,6 +217,65 @@ export default {
 
         &>button {
             padding: 0.25rem;
+        }
+    }
+}
+
+
+/* -----------------------------------------
+* RESPONSIVE
+-------------------------------------------*/
+/*** SM ***/
+@media screen and (min-width: 576px) {
+    .carousel {
+        @for $i from 2 through 6 {
+            .carousel-items.items-sm-#{$i}> :deep(*) {
+                flex-basis: calc(100% / $i);
+            }
+        }
+    }
+}
+
+/*** MD ***/
+@media screen and (min-width: 768px) {
+    .carousel {
+        @for $i from 2 through 6 {
+            .carousel-items.items-md-#{$i}> :deep(*) {
+                flex-basis: calc(100% / $i);
+            }
+        }
+    }
+}
+
+/*** LG ***/
+@media screen and (min-width: 992px) {
+    .carousel {
+        @for $i from 2 through 6 {
+            .carousel-items.items-lg-#{$i}> :deep(*) {
+                flex-basis: calc(100% / $i);
+            }
+        }
+    }
+}
+
+/*** XL ***/
+@media screen and (min-width: 1200px) {
+    .carousel {
+        @for $i from 2 through 6 {
+            .carousel-items.items-xl-#{$i}> :deep(*) {
+                flex-basis: calc(100% / $i);
+            }
+        }
+    }
+}
+
+/*** XXL ***/
+@media screen and (min-width: 1400px) {
+    .carousel {
+        @for $i from 2 through 6 {
+            .carousel-items.items-xxl-#{$i}> :deep(*) {
+                flex-basis: calc(100% / $i);
+            }
         }
     }
 }

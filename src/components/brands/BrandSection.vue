@@ -17,7 +17,8 @@ export default {
     <section class="container py-5">
 
         <!-- Product Deals List -->
-        <BaseCarousel :responsive="{ 'xs': 2, 'sm': 3, 'md': 4, 'lg': 5 }" :total-items="5" infinite :autoplay="3000">
+        <BaseCarousel :responsive="{ 'xs': 2, 'sm': 3, 'md': 4, 'lg': 5 }" :total-items="5" infinite :autoplay="3000"
+            :nav-arrow-icons="['angle-left', 'angle-right']">
             <div>
                 <div class="px-3">
                     <img src="../../assets/img/brands/brand-01.png" alt="Brand 01" class="img-fluid">

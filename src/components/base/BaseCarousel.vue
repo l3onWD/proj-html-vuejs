@@ -17,6 +17,7 @@ export default {
 
         // Optional
         navDots: Boolean,
+        navArrowIcons: Array,
         infinite: Boolean,
         autoplay: Number
     },
@@ -142,11 +143,11 @@ export default {
         <div v-if="!navDots && totalItems > totalVisibleItems">
 
             <button v-show="infinite || index" @click="slideTo('prev')" class="nav-arrow nav-prev">
-                <FontAwesomeIcon icon="fas fa-circle-chevron-left" size="2xl" />
+                <FontAwesomeIcon :icon="['fas', navArrowIcons ? navArrowIcons[0] : 'circle-chevron-left']" size="2xl" />
             </button>
 
             <button v-show="infinite || index < maxIndex" @click="slideTo('next')" class="nav-arrow nav-next">
-                <FontAwesomeIcon icon="fas fa-circle-chevron-right" size="2xl" />
+                <FontAwesomeIcon :icon="['fas', navArrowIcons ? navArrowIcons[1] : 'circle-chevron-right']" size="2xl" />
             </button>
         </div>
 

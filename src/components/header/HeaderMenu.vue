@@ -34,7 +34,7 @@ export default {
 
             <a :href="link.url" :class="{ active: link.isActive }">{{ link.text }}</a>
 
-            <HeaderSubmenu v-if="link.submenu" :links="link.submenu" />
+            <HeaderSubmenu v-if="link.submenu" :links="link.submenu" :type="link.submenuType" />
 
         </li>
     </ul>

@@ -7,7 +7,8 @@ export default {
     },
 
     props: {
-        links: Array
+        links: Array,
+        type: String
     }
 }
 </script>
@@ -18,7 +19,7 @@ export default {
         <FontAwesomeIcon :icon="['fas', showMobileMenu ? 'angle-right' : 'angle-down']" />
     </button>
 
-    <ul class="header-submenu" :class="{ 'show': showMobileMenu }">
+    <ul class="header-submenu" :class="[{ 'show': showMobileMenu }, type ? `submenu-${type}` : '']">
         <li v-for="link in links" :key="link.text">
 
             <a :href="link.url" :class="{ active: link.isActive }">{{ link.text }}</a>
@@ -91,6 +92,11 @@ export default {
 
         a {
             padding: 0.25rem 1rem;
+        }
+
+        &.submenu-right {
+            left: auto;
+            right: 0;
         }
 
     }

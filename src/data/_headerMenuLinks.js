@@ -26,7 +26,8 @@ export default [
                 url: '#',
                 text: 'Sub 03'
             }
-        ]
+        ],
+        submenuType: 'left'
     },
     {
         url: '#',
@@ -41,6 +42,21 @@ export default [
     {
         url: '#',
         text: 'Features',
-        isActive: false
+        isActive: false,
+        submenu: [
+            {
+                url: '#',
+                text: 'Sub 01'
+            },
+            {
+                url: '#',
+                text: 'Sub 02'
+            },
+            {
+                url: '#',
+                text: 'Sub 03'
+            }
+        ],
+        submenuType: 'right'
     }
 ]

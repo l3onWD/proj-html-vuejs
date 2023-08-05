@@ -30,8 +30,7 @@ export default {
 
 <template>
     <ul class="header-menu" :class="{ 'show': showMobileMenu }">
-        <li v-for="link in links" :key="link.text"
-            :class="[{ 'has-submenu-full': link.submenuType === 'full' }, { 'has-submenu': link.submenuType && link.submenuType !== 'full' }]">
+        <li v-for="link in links" :key="link.text" :class="[link.submenuType ? `has-submenu-${link.submenuType}` : '']">
 
             <a :href="link.url" :class="{ active: link.isActive }">{{ link.text }}</a>
 
@@ -77,8 +76,7 @@ export default {
         }
     }
 
-    .has-submenu,
-    .has-submenu-full {
+    [class^='has-submenu-'] {
         position: relative;
     }
 

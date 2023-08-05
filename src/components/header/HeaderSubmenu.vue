@@ -32,7 +32,7 @@ export default {
     <HeaderSubmenuToggler @menu-toggled="onMenuToggled" />
 
     <!-- Submenu Links -->
-    <ul v-if="type !== 'full'" class="header-submenu" :class="[{ 'show': showMobileMenu }, type ? `submenu-${type}` : '']">
+    <ul v-if="type !== 'full'" class="header-submenu" :class="[{ 'show': showMobileMenu }, `submenu-${type}`]">
         <li v-for="link in links" :key="link.text">
 
             <a :href="link.url" :class="{ active: link.isActive }">{{ link.text }}</a>
@@ -41,7 +41,7 @@ export default {
     </ul>
 
     <!-- Submenu Full Width -->
-    <div v-else class="header-submenu" :class="[{ 'show': showMobileMenu }, type ? `submenu-${type}` : '']">
+    <div v-else class="header-submenu submenu-full" :class="{ 'show': showMobileMenu }">
         <div class="container">
 
             <div class="row flex-column flex-lg-row">
@@ -80,6 +80,10 @@ export default {
             color: $col-yellow;
         }
     }
+
+    &.submenu-full {
+        padding-left: 0;
+    }
 }
 
 .header-submenu.show {
@@ -115,7 +119,6 @@ export default {
 
 
         &.submenu-full {
-            left: 0;
             right: 0;
         }
 

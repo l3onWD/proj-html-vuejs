@@ -37,7 +37,71 @@ export default [
     {
         url: '#',
         text: 'ShortCode',
-        isActive: false
+        isActive: false,
+        submenu: [
+            [
+                {
+                    url: '#',
+                    text: 'Sub Full 01'
+                },
+                {
+                    url: '#',
+                    text: 'Sub Full 02'
+                },
+                {
+                    url: '#',
+                    text: 'Sub Full 03'
+                }
+            ],
+            [
+                {
+                    url: '#',
+                    text: 'Sub Full 01'
+                },
+                {
+                    url: '#',
+                    text: 'Sub Full 02'
+                },
+                {
+                    url: '#',
+                    text: 'Sub Full 03'
+                }
+            ],
+            [
+                {
+                    url: '#',
+                    text: 'Sub Full 01'
+                },
+                {
+                    url: '#',
+                    text: 'Sub Full 02'
+                },
+                {
+                    url: '#',
+                    text: 'Sub Full 03'
+                },
+                {
+                    url: '#',
+                    text: 'Sub Full 04'
+                }
+            ],
+            [
+                {
+                    url: '#',
+                    text: 'Sub Full 01'
+                },
+                {
+                    url: '#',
+                    text: 'Sub Full 02'
+                },
+                {
+                    url: '#',
+                    text: 'Sub Full 03'
+                }
+            ]
+
+        ],
+        submenuType: 'full'
     },
     {
         url: '#',

@@ -30,7 +30,8 @@ export default {
 
 <template>
     <ul class="header-menu" :class="{ 'show': showMobileMenu }">
-        <li v-for="link in links" :key="link.text" :class="{ 'position-relative': link.submenu }">
+        <li v-for="link in links" :key="link.text"
+            :class="[{ 'has-submenu-full': link.submenuType === 'full' }, { 'has-submenu': link.submenuType && link.submenuType !== 'full' }]">
 
             <a :href="link.url" :class="{ active: link.isActive }">{{ link.text }}</a>
 
@@ -58,6 +59,7 @@ export default {
 
     z-index: 1;
     transition: visibility 0.2s, left 0.2s;
+    overflow-y: auto;
 
     &.show {
         left: 0;
@@ -73,6 +75,11 @@ export default {
         &.active {
             color: $col-yellow;
         }
+    }
+
+    .has-submenu,
+    .has-submenu-full {
+        position: relative;
     }
 
 }
@@ -92,7 +99,8 @@ export default {
         display: flex;
         justify-content: center;
         visibility: visible;
-        opacity: 1;
+
+        overflow-y: visible;
 
 
         a {
@@ -100,6 +108,10 @@ export default {
 
             font-size: 1.1rem;
             font-weight: bold;
+        }
+
+        .has-submenu-full {
+            position: static;
         }
     }
 }

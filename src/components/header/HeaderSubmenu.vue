@@ -19,13 +19,30 @@ export default {
         <FontAwesomeIcon :icon="['fas', showMobileMenu ? 'angle-right' : 'angle-down']" />
     </button>
 
-    <ul class="header-submenu" :class="[{ 'show': showMobileMenu }, type ? `submenu-${type}` : '']">
+    <ul v-if="type !== 'full'" class="header-submenu" :class="[{ 'show': showMobileMenu }, type ? `submenu-${type}` : '']">
         <li v-for="link in links" :key="link.text">
 
             <a :href="link.url" :class="{ active: link.isActive }">{{ link.text }}</a>
 
         </li>
     </ul>
+
+    <div v-else class="header-submenu" :class="[{ 'show': showMobileMenu }, type ? `submenu-${type}` : '']">
+        <div class="container">
+
+            <div class="row flex-column flex-lg-row">
+
+                <ul v-for="menuCol in links" :key="menuCol" class="col">
+                    <li v-for="link in menuCol" :key="link.text">
+
+                        <a :href="link.url" :class="{ active: link.isActive }">{{ link.text }}</a>
+
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
 </template>
 
 
@@ -96,6 +113,12 @@ export default {
 
         &.submenu-right {
             left: auto;
+            right: 0;
+        }
+
+
+        &.submenu-full {
+            left: 0;
             right: 0;
         }
 

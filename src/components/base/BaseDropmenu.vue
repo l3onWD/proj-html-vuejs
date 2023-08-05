@@ -29,9 +29,11 @@ export default {
         </div>
 
         <!-- Menu content -->
-        <div v-show="isActive" class="dropmenu-content">
-            <slot name="content"></slot>
-        </div>
+        <Transition name="pop-in">
+            <div v-show="isActive" class="dropmenu-content">
+                <slot name="content"></slot>
+            </div>
+        </Transition>
 
     </div>
 </template>
@@ -72,5 +74,19 @@ export default {
         left: auto;
         right: 0;
     }
+}
+
+
+/*** Transition ***/
+.pop-in-enter-from {
+    transform: scale(0.9);
+}
+
+.pop-in-enter-to {
+    transform: scale(1);
+}
+
+.pop-in-enter-active {
+    transition: transform 0.15s;
 }
 </style>

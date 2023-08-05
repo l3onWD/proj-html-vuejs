@@ -1,5 +1,12 @@
 <script>
+/* -----------------------------------------
+* RESOURCES
+-------------------------------------------*/
+/*** COMPONENTS ***/
+import HeaderSubmenuToggler from '@/components/header/HeaderSubmenuToggler.vue';
+
 export default {
+    components: { HeaderSubmenuToggler },
     data() {
         return {
             showMobileMenu: false
@@ -9,16 +16,22 @@ export default {
     props: {
         links: Array,
         type: String
+    },
+
+    methods: {
+        onMenuToggled(show) {
+            this.showMobileMenu = show;
+        }
     }
 }
 </script>
 
 
 <template>
-    <button class="header-submenu-toggler" @click="showMobileMenu = !showMobileMenu">
-        <FontAwesomeIcon :icon="['fas', showMobileMenu ? 'angle-right' : 'angle-down']" />
-    </button>
+    <!-- Submenu Toggler -->
+    <HeaderSubmenuToggler @menu-toggled="onMenuToggled" />
 
+    <!-- Submenu Links -->
     <ul v-if="type !== 'full'" class="header-submenu" :class="[{ 'show': showMobileMenu }, type ? `submenu-${type}` : '']">
         <li v-for="link in links" :key="link.text">
 
@@ -27,6 +40,7 @@ export default {
         </li>
     </ul>
 
+    <!-- Submenu Full Width -->
     <div v-else class="header-submenu" :class="[{ 'show': showMobileMenu }, type ? `submenu-${type}` : '']">
         <div class="container">
 
@@ -50,7 +64,6 @@ export default {
 @use '@/assets/scss/vars' as *;
 
 
-/*** SUBMENU ***/
 .header-submenu {
     padding-left: 1rem;
 
@@ -73,28 +86,12 @@ export default {
     display: block;
 }
 
-
-/*** TOGGLER ***/
-.header-submenu-toggler {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 64px;
-    height: 32px;
-    padding: 0 0.5rem;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
 /* -----------------------------------------
 * RESPONSIVE
 -------------------------------------------*/
 /*** MEDIA LG ***/
 @media screen and (min-width: 992px) {
 
-    /*** SUBMENU ***/
     .header-submenu {
         padding: 0.75rem 0;
         position: absolute;
@@ -130,12 +127,6 @@ export default {
 
     li:hover>.header-submenu {
         display: block;
-    }
-
-
-    /*** TOGGLER ***/
-    .header-submenu-toggler {
-        display: none;
     }
 }
 </style>

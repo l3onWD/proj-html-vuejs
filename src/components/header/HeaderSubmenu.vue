@@ -117,7 +117,6 @@ export default {
             right: 0;
         }
 
-
         &.submenu-full {
             right: 0;
         }
@@ -125,11 +124,15 @@ export default {
     }
 
     .header-menu .header-submenu {
-        display: none;
+        display: block;
+        visibility: hidden;
+        transform: scale(0.9);
     }
 
     li:hover>.header-submenu {
-        display: block;
+        visibility: visible;
+        transform: scale(1);
+        transition: visibility 0.15s, transform 0.15s;
     }
 }
 </style>
